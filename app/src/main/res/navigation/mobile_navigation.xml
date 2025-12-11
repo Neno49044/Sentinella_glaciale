@@ -3,23 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_mappa">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.example.sentinellaglaciale.ui.home.HomeFragment"
+        android:id="@+id/navigation_educazione"
+        android:name="com.example.sentinellaglaciale.ui.educazione.educazioneFragment"
         android:label="@string/title_educazione"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_educazione" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.example.sentinellaglaciale.ui.dashboard.DashboardFragment"
+        android:id="@+id/navigation_mappa"
+        android:name="com.example.sentinellaglaciale.ui.mappa.mappaFragment"
         android:label="@string/title_mappa"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_mappa" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.sentinellaglaciale.ui.notifications.NotificationsFragment"
+        android:id="@+id/navigation_eventi"
+        android:name="com.example.sentinellaglaciale.ui.eventi.eventiFragment"
         android:label="@string/title_eventi"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_eventi" />
 </navigation>
