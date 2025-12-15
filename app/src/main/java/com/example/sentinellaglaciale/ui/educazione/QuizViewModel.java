@@ -1,18 +1,17 @@
 package com.example.sentinellaglaciale.ui.educazione;
 
-
-
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class educazioneViewModel extends ViewModel {
+public class QuizViewModel extends ViewModel {
+    // TODO: Implement the ViewModel
 
     private final MutableLiveData<String> mText;
 
-    public educazioneViewModel() {
+    public QuizViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("Sezione dell'educazione, comprende informazioni + quiz");
+        mText.setValue("Pagina del quiz, qui vanno inserite le domande");
     }
 
     public LiveData<String> getText() {

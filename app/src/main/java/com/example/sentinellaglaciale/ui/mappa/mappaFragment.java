@@ -11,7 +11,6 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.sentinellaglaciale.databinding.FragmentMappaBinding;
-import com.example.sentinellaglaciale.databinding.FragmentMappaBinding;
 
 public class mappaFragment extends Fragment {
 

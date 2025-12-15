@@ -9,7 +9,13 @@
         android:id="@+id/navigation_educazione"
         android:name="com.example.sentinellaglaciale.ui.educazione.educazioneFragment"
         android:label="@string/title_educazione"
-        tools:layout="@layout/fragment_educazione" />
+        tools:layout="@layout/fragment_educazione" >
+
+        <action
+            android:id="@+id/action_educazioneFragment_to_QuizFragment"
+            app:destination="@id/navigation_Quiz" />
+
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_mappa"
@@ -22,4 +28,16 @@
         android:name="com.example.sentinellaglaciale.ui.eventi.eventiFragment"
         android:label="@string/title_eventi"
         tools:layout="@layout/fragment_eventi" />
+
+    <fragment
+        android:id="@+id/navigation_Quiz"
+        android:name="com.example.sentinellaglaciale.ui.educazione.QuizFragment"
+        android:label="@string/title_quiz"
+        tools:layout="@layout/fragment_quiz">
+
+        <action
+            android:id="@+id/action_QuizFragment_to_educazioneFragment"
+            app:destination="@id/navigation_educazione" />
+    </fragment>
+
 </navigation>

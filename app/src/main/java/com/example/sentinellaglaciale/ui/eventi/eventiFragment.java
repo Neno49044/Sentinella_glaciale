@@ -11,7 +11,6 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.sentinellaglaciale.databinding.FragmentEventiBinding;
-import com.example.sentinellaglaciale.databinding.FragmentEventiBinding;
 
 public class eventiFragment extends Fragment {
 
