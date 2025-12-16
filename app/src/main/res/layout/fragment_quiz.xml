@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.educazione.QuizFragment">
+    tools:context=".ui.educazione.QuizFragment"
+    android:paddingTop="?attr/actionBarSize">
 
     <TextView
         android:id="@+id/text_quiz"
@@ -23,16 +24,15 @@
 
     <Button
         android:id="@+id/button_quiz"
-        android:textColor="@color/teal_200"
-        android:backgroundTint="@color/black"
-        android:text="@string/app_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:backgroundTint="@color/black"
+        android:text="@string/app_name"
+        android:textColor="@color/teal_200"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </FrameLayout>
