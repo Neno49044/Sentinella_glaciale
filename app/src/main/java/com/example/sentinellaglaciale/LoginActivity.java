@@ -8,6 +8,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import com.example.sentinellaglaciale.database.UserDao;
+
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -23,6 +25,11 @@ public class LoginActivity extends AppCompatActivity {
         etPassword = findViewById(R.id.etPassword);
         btnLogin = findViewById(R.id.btnLogin);
 
+        //user di prova da cancellare appena fatta la registrazione
+        UserDao userDao = new UserDao(this);
+        userDao.registerUser("admin", "1234");
+
+
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -32,15 +39,25 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void login() {
-        String email = etEmail.getText().toString();
-        String password = etPassword.getText().toString();
+        String email = etEmail.getText().toString().trim();
+        String password = etPassword.getText().toString().trim();
 
-        if (email.equals("admin") && password.equals("1234")) {
+        if (email.isEmpty() || password.isEmpty()) {
+            Toast.makeText(this, "Inserisci email e password", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        UserDao userDao = new UserDao(this);
+
+        if (userDao.login(email, password)) {
+            // ✅ LOGIN OK
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(intent);
             finish();
         } else {
-            Toast.makeText(this, "Credenziali errate", Toast.LENGTH_SHORT).show();
+            // ❌ LOGIN FALLITO
+            Toast.makeText(this, "Email o password errate", Toast.LENGTH_SHORT).show();
         }
     }
+
 }
