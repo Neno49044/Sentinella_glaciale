@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +16,7 @@ public class LoginActivity extends AppCompatActivity {
 
     EditText etEmail, etPassword;
     Button btnLogin;
+    TextView tvRegister;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,10 +26,17 @@ public class LoginActivity extends AppCompatActivity {
         etEmail = findViewById(R.id.etEmail);
         etPassword = findViewById(R.id.etPassword);
         btnLogin = findViewById(R.id.btnLogin);
+        tvRegister = findViewById(R.id.tvRegister);
+
+        tvRegister.setOnClickListener(v -> {
+            Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+            startActivity(intent);
+        });
+
 
         //user di prova da cancellare appena fatta la registrazione
-        UserDao userDao = new UserDao(this);
-        userDao.registerUser("admin", "1234");
+        //UserDao userDao = new UserDao(this);
+        //userDao.registerUser("admin", "1234");
 
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
@@ -50,12 +59,10 @@ public class LoginActivity extends AppCompatActivity {
         UserDao userDao = new UserDao(this);
 
         if (userDao.login(email, password)) {
-            // ✅ LOGIN OK
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(intent);
             finish();
         } else {
-            // ❌ LOGIN FALLITO
             Toast.makeText(this, "Email o password errate", Toast.LENGTH_SHORT).show();
         }
     }

@@ -33,18 +33,25 @@ public class UserDao {
         }
     }
 
-    public boolean registerUser(String email, String password) {
+    public boolean registerUser(String email,
+                                String username,
+                                String password,
+                                String imageUri) {
+
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         ContentValues values = new ContentValues();
         values.put(DatabaseHelper.COL_EMAIL, email);
+        values.put(DatabaseHelper.COL_USERNAME, username);
         values.put(DatabaseHelper.COL_PASSWORD, hashPassword(password));
+        values.put(DatabaseHelper.COL_IMAGE_URI, imageUri);
 
         long result = db.insert(DatabaseHelper.TABLE_USERS, null, values);
         db.close();
 
         return result != -1;
     }
+
 
     public boolean login(String email, String password) {
         SQLiteDatabase db = dbHelper.getReadableDatabase();

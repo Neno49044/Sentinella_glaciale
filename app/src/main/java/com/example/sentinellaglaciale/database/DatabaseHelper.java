@@ -7,13 +7,16 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "sentinella.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
 
     public static final String TABLE_USERS = "users";
 
     public static final String COL_ID = "id";
     public static final String COL_EMAIL = "email";
     public static final String COL_PASSWORD = "password_hash";
+    public static final String COL_USERNAME = "username";
+    public static final String COL_IMAGE_URI = "image_uri";
+
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -25,7 +28,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "CREATE TABLE " + TABLE_USERS + " (" +
                         COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                         COL_EMAIL + " TEXT UNIQUE, " +
-                        COL_PASSWORD + " TEXT)";
+                        COL_USERNAME + " TEXT, " +
+                        COL_PASSWORD + " TEXT, " +
+                        COL_IMAGE_URI + " TEXT)";
 
         db.execSQL(createTable);
     }
