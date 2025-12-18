@@ -14,11 +14,9 @@
         android:roundIcon="@drawable/ic_sentinella"
         android:supportsRtl="true"
         android:theme="@style/Theme.SentinellaGlaciale">
+
         <activity
             android:name=".RegisterActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.RegisterActivity"
             android:exported="false"
             android:theme="@style/Theme.SentinellaGlaciale" />
         <activity

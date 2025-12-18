@@ -1,8 +1,14 @@
 package com.example.sentinellaglaciale;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.widget.*;
-import android.app.AlertDialog;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.GridView;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,17 +18,17 @@ public class RegisterActivity extends AppCompatActivity {
 
     EditText etEmail, etUsername, etPassword;
     ImageView imgProfile;
+    LinearLayout layoutProfilePicker;
     Button btnRegister;
 
-    // Array degli avatar predefiniti
+
     private final int[] avatars = {
-            R.drawable.img_profilo_prova,
-            R.drawable.images2,
-            //R.drawable.avatar3,
-            //R.drawable.avatar4
+            R.drawable.ic_sentinella,
+            R.drawable.sentinella2,
+            R.drawable.sentinella3
     };
 
-    private int selectedAvatarResId = R.drawable.img_profilo_prova; // avatar di default
+    private int selectedAvatarResId = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,32 +39,71 @@ public class RegisterActivity extends AppCompatActivity {
         etUsername = findViewById(R.id.etUsername);
         etPassword = findViewById(R.id.etPassword);
         imgProfile = findViewById(R.id.imgProfile);
+        layoutProfilePicker = findViewById(R.id.layoutProfilePicker);
         btnRegister = findViewById(R.id.btnRegister);
 
-        // Imposta avatar di default
-        imgProfile.setImageResource(selectedAvatarResId);
 
-        // Click sull'immagine per scegliere avatar
-        imgProfile.setOnClickListener(v -> showAvatarSelection());
+        layoutProfilePicker.setOnClickListener(v -> showAvatarSelection());
 
-        // Click sul bottone registra
         btnRegister.setOnClickListener(v -> register());
     }
 
-    // Mostra AlertDialog con scelta avatar
     private void showAvatarSelection() {
-        CharSequence[] avatarNames = {"Avatar 1", "Avatar 2", "Avatar 3", "Avatar 4"};
-
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Scegli il tuo avatar");
-        builder.setItems(avatarNames, (dialog, which) -> {
-            selectedAvatarResId = avatars[which];
+        builder.setTitle("Scegli la tua immagine profilo");
+
+        LayoutInflater inflater = getLayoutInflater();
+        View dialogView = inflater.inflate(R.layout.dialog_avatar_grid, null);
+        builder.setView(dialogView);
+
+        GridView gridView = dialogView.findViewById(R.id.gridAvatars);
+
+        BaseAdapter adapter = new BaseAdapter() {
+            @Override
+            public int getCount() {
+                return avatars.length;
+            }
+
+            @Override
+            public Object getItem(int position) {
+                return avatars[position];
+            }
+
+            @Override
+            public long getItemId(int position) {
+                return position;
+            }
+
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+                ImageView imageView;
+                if (convertView == null) {
+                    imageView = (ImageView) LayoutInflater.from(RegisterActivity.this)
+                            .inflate(R.layout.item_avatar, parent, false);
+                } else {
+                    imageView = (ImageView) convertView;
+                }
+
+                imageView.setImageResource(avatars[position]);
+                return imageView;
+            }
+        };
+
+        gridView.setAdapter(adapter);
+
+        AlertDialog dialog = builder.create();
+
+        gridView.setOnItemClickListener((parent, view, position, id) -> {
+            selectedAvatarResId = avatars[position];
             imgProfile.setImageResource(selectedAvatarResId);
+            dialog.dismiss();
         });
-        builder.show();
+
+        dialog.show();
     }
 
-    // Metodo per registrare l'utente
+
+    // Registrazione utente
     private void register() {
         String email = etEmail.getText().toString().trim();
         String username = etUsername.getText().toString().trim();
@@ -69,7 +114,11 @@ public class RegisterActivity extends AppCompatActivity {
             return;
         }
 
-        // Salviamo il nome della risorsa nel DB
+        if (selectedAvatarResId == -1) {
+            Toast.makeText(this, "Scegli un'immagine profilo", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         String avatarName = getResources().getResourceEntryName(selectedAvatarResId);
 
         UserDao userDao = new UserDao(this);
