@@ -11,10 +11,11 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.sentinellaglaciale.databinding.FragmentMappaBinding;
-
 import org.osmdroid.config.Configuration;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
+import org.osmdroid.views.overlay.Marker;
+import java.util.List;
 
 public class mappaFragment extends Fragment {
 
@@ -44,10 +45,28 @@ public class mappaFragment extends Fragment {
         map.setMultiTouchControls(true);    // permette pinch zoom
 
 
-        // Centro la mappa su Roma
+        // Centro la mappa su Belluno
         GeoPoint startPoint = new GeoPoint(46.1391, 12.2172);
-        map.getController().setZoom(10.0);
+        map.getController().setZoom(10.5);
         map.getController().setCenter(startPoint);
+
+        mappaViewModel.getGhiacciai().observe(
+                getViewLifecycleOwner(),
+                geoPoints -> {
+                    map.getOverlays().clear();
+
+                    for (GeoPoint point : geoPoints) {
+                        Marker marker = new Marker(map);
+                        marker.setPosition(point);
+                        marker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
+                        marker.setTitle("Ghiacciaio");
+
+                        map.getOverlays().add(marker);
+                    }
+
+                    map.invalidate(); // forza il redraw
+                }
+        );
 
         return root;
     }
