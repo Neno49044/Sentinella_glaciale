@@ -1,5 +1,8 @@
 package com.example.sentinellaglaciale.ui.educazione;
 
+import static android.view.View.GONE;
+import static android.view.View.VISIBLE;
+
 import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
@@ -13,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.example.sentinellaglaciale.R;
@@ -33,15 +37,35 @@ public class QuizFragment extends Fragment {
             final TextView textView = binding.textQuiz;
             QuizViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
 
-            var view = inflater.inflate(R.layout.fragment_educazione, container, false);
-            Button button = (Button) view.findViewById(R.id.button_educazione);
-            binding.buttonQuiz.setOnClickListener(v ->
-                    NavHostFragment.findNavController(QuizFragment.this)
-                            .navigate(R.id.action_QuizFragment_to_educazioneFragment)
-            );
+            binding.buttonSoluzione.setOnClickListener(v -> {
+                binding.rbOpzione11.setEnabled(false);
+                binding.rbOpzione12.setEnabled(false);
+                binding.rbOpzione13.setEnabled(false);
+                binding.rbOpzione14.setEnabled(false);
+                binding.rbOpzione21.setEnabled(false);
+                binding.rbOpzione22.setEnabled(false);
+                binding.rbOpzione23.setEnabled(false);
+                binding.rbOpzione24.setEnabled(false);
+                binding.rbOpzione31.setEnabled(false);
+                binding.rbOpzione32.setEnabled(false);
+                binding.rbOpzione33.setEnabled(false);
+                binding.rbOpzione34.setEnabled(false);
+                binding.buttonSoluzione.setVisibility(GONE);
+                binding.buttonQuizcompleto.setVisibility(VISIBLE);
+                binding.solDomanda1.setVisibility(VISIBLE);
+                binding.solDomanda2.setVisibility(VISIBLE);
+                binding.solDomanda3.setVisibility(VISIBLE);
+            });
 
-            return root;
+        binding.buttonQuizcompleto.setOnClickListener(v ->
+                NavHostFragment.findNavController(QuizFragment.this)
+                        .navigate(R.id.action_QuizFragment_to_educazioneFragment)
+        );
+
+
+        return root;
             //return inflater.inflate(R.layout.fragment_quiz, container, false);
 
+    }
 
-}}
+}

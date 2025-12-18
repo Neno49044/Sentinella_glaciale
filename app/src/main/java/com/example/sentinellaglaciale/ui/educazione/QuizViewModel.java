@@ -11,7 +11,7 @@ public class QuizViewModel extends ViewModel {
 
     public QuizViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("Pagina del quiz, qui vanno inserite le domande");
+        mText.setValue("Benvenuto al quiz!");
     }
 
     public LiveData<String> getText() {
