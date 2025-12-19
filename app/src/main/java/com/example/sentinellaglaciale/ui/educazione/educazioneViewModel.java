@@ -12,7 +12,9 @@ public class educazioneViewModel extends ViewModel {
 
     public educazioneViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("Sezione dell'educazione, comprende informazioni + quiz");
+        mText.setValue("Benvenuto in sentinella glaciale! In questa sezione potrai imparare alcune " +
+                "informazioni sui principali ghiacciai dolomitici e metterti alla prova con un " +
+                "divertente quiz!");
     }
 
     public LiveData<String> getText() {

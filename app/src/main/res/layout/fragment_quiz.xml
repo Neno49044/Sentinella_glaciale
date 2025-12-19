@@ -36,23 +36,23 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:textSize="18dp"
-            android:text="Domanda 1:"/>
+            android:text="@string/domanda1"/>
         <RadioGroup
             android:id="@+id/domanda1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp">
 
-            <RadioButton android:id="@+id/rb_opzione11" android:text="opzione1"
+            <RadioButton android:id="@+id/rb_opzione11" android:text="@string/opzione11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
-            <RadioButton android:id="@+id/rb_opzione12" android:text="opzione2"
+            <RadioButton android:id="@+id/rb_opzione12" android:text="@string/opzione12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
-            <RadioButton android:id="@+id/rb_opzione13" android:text="opzione3"
+            <RadioButton android:id="@+id/rb_opzione13" android:text="@string/opzione13"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
-            <RadioButton android:id="@+id/rb_opzione14" android:text="opzione4"
+            <RadioButton android:id="@+id/rb_opzione14" android:text="@string/opzione14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
@@ -63,7 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:textSize="18dp"
-            android:text="La soluzione corretta è la numero 2"
+            android:text="@string/soluzione1"
             android:visibility="gone"
             />
 
@@ -73,23 +73,23 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:textSize="18dp"
-            android:text="Domanda 2:"/>
+            android:text="@string/domanda2"/>
         <RadioGroup
             android:id="@+id/domanda2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp">
 
-            <RadioButton android:id="@+id/rb_opzione21" android:text="opzione1"
+            <RadioButton android:id="@+id/rb_opzione21" android:text="@string/opzione21"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
-            <RadioButton android:id="@+id/rb_opzione22" android:text="opzione2"
+            <RadioButton android:id="@+id/rb_opzione22" android:text="@string/opzione22"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
-            <RadioButton android:id="@+id/rb_opzione23" android:text="opzione3"
+            <RadioButton android:id="@+id/rb_opzione23" android:text="@string/opzione23"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
-            <RadioButton android:id="@+id/rb_opzione24" android:text="opzione4"
+            <RadioButton android:id="@+id/rb_opzione24" android:text="@string/opzione24"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
@@ -100,7 +100,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:textSize="18dp"
-            android:text="La soluzione corretta è la numero 2"
+            android:text="@string/soluzione2"
             android:visibility="gone"
             />
 
@@ -110,23 +110,23 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:textSize="18dp"
-            android:text="Domanda 3:"/>
+            android:text="@string/domanda3"/>
         <RadioGroup
             android:id="@+id/domanda3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp">
 
-            <RadioButton android:id="@+id/rb_opzione31" android:text="opzione1"
+            <RadioButton android:id="@+id/rb_opzione31" android:text="@string/opzione31"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
-            <RadioButton android:id="@+id/rb_opzione32" android:text="opzione2"
+            <RadioButton android:id="@+id/rb_opzione32" android:text="@string/opzione32"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
-            <RadioButton android:id="@+id/rb_opzione33" android:text="opzione3"
+            <RadioButton android:id="@+id/rb_opzione33" android:text="@string/opzione33"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
-            <RadioButton android:id="@+id/rb_opzione34" android:text="opzione4"
+            <RadioButton android:id="@+id/rb_opzione34" android:text="@string/opzione34"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
@@ -137,7 +137,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:textSize="18dp"
-            android:text="La soluzione corretta è la numero 2"
+            android:text="@string/soluzione3"
             android:visibility="gone"
             />
 

@@ -5,4 +5,44 @@
     <string name="title_eventi">Eventi</string>
     <string name="title_quiz">Quiz</string>
 
+    <!--Stringhe utili per la sezione educazione-->
+    <string name="button_quiz">Mettiti alla prova!</string>
+    <string name="titolo_edu1">INTRODUZIONE</string>
+    <string name="info_generali1">I ghiacciai alpini sono tra i più grandi e studiati complessi
+        glaciali dell’Europa centrale, ma negli ultimi decenni stanno subendo un ritiro accelerato
+        a causa dei cambiamenti climatici. Questo fenomeno non è un semplice processo naturale,
+        ma è profondamente legato all’azione umana e alle emissioni di gas serra.</string>
+    <string name="titolo_edu2">RISCALDAMENTO GLOBALE</string>
+    <string name="info_generali2">L’elemento centrale dietro lo scioglimento dei ghiacciai è il
+        riscaldamento globale: l’aumento delle temperature medie globali è dovuto principalmente
+        all’aumento dei gas a effetto serra (come anidride carbonica e metano) derivanti dalle
+        attività umane, specialmente la combustione di combustibili fossili, l’industria e la
+        deforestazione. Nelle Alpi questo riscaldamento è più intenso della media mondiale:
+        la regione alpina si riscalda circa due volte più velocemente della media globale,
+        rendendo i ghiacciai particolarmente vulnerabili</string>
+    <string name="titolo_edu3">ALTRE CAUSE</string>
+    <string name="info_generali3">Poi metterò un elenco puntato</string>
+    <string name="titolo_edu4">CONSEGUENZE</string>
+    <string name="info_generali4">Poi metterò un elenco puntato</string>
+
+    <!--Stringhe utili per la parte del quiz-->
+    <string name="domanda1">1) Quale delle seguenti è una delle principali cause dello scioglimento dei ghiacciai?</string>
+    <string name="opzione11">Aumento delle precipitazioni</string>
+    <string name="opzione12">Aumento dell\'effetto serra</string>
+    <string name="opzione13">Riduzione dell\'acqua presente nei bacini idrici</string>
+    <string name="opzione14">Aumento del numero di frane nei paesaggi montani</string>
+    <string name="soluzione1">La soluzione corretta è la numero 2: Aumento dell\'effetto serra</string>
+    <string name="domanda2">2) Quale di queste non è una causa dello scioglimento dei ghiacciai?</string>
+    <string name="opzione21">Riduzione dell\'effetto albedo</string>
+    <string name="opzione22">Presenza di fuliggine sul ghiaccio</string>
+    <string name="opzione23">Emissione di scorie nucleari</string>
+    <string name="opzione24">Riduzione delle nevicate</string>
+    <string name="soluzione2">La risposta giusta è la numero 3: Emissione di scorie nucleari.</string>
+    <string name="domanda3">3)</string>
+    <string name="opzione31"></string>
+    <string name="opzione32"></string>
+    <string name="opzione33"></string>
+    <string name="opzione34"></string>
+    <string name="soluzione3"></string>
+
 </resources>
