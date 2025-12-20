@@ -37,12 +37,14 @@
     <string name="opzione22">Presenza di fuliggine sul ghiaccio</string>
     <string name="opzione23">Emissione di scorie nucleari</string>
     <string name="opzione24">Riduzione delle nevicate</string>
-    <string name="soluzione2">La risposta giusta è la numero 3: Emissione di scorie nucleari.</string>
-    <string name="domanda3">3)</string>
-    <string name="opzione31"></string>
-    <string name="opzione32"></string>
-    <string name="opzione33"></string>
-    <string name="opzione34"></string>
-    <string name="soluzione3"></string>
+    <string name="soluzione2">La soluzioine corretta è la numero 3: Emissione di scorie nucleari.</string>
+    <string name="domanda3">3) A che velocità incede il riscaldamento globale sui ghiacciai alpini rispetto alla media mondiale?</string>
+    <string name="opzione31">Alla stessa velocità</string>
+    <string name="opzione32">La metà</string>
+    <string name="opzione33">Il triplo</string>
+    <string name="opzione34">Il doppio</string>
+    <string name="soluzione3">La soluzione corretta è la numero 4: Il doppio.</string>
+    <string name="button_soluzione">Invia le risposte</string>
+    <string name="button_finequiz">Torna indietro</string>
 
 </resources>
