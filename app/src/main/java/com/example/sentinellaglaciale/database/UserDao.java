@@ -1,5 +1,6 @@
 package com.example.sentinellaglaciale.database;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -72,4 +73,26 @@ public class UserDao {
 
         return success;
     }
+    public User getUserByEmail(String email) {
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+
+        Cursor cursor = db.query(
+                DatabaseHelper.TABLE_USERS,
+                null,
+                DatabaseHelper.COL_EMAIL + "=?",
+                new String[]{email},
+                null, null, null
+        );
+
+        User user = null;
+        if (cursor != null && cursor.moveToFirst()) {
+            @SuppressLint("Range") String username = cursor.getString(cursor.getColumnIndex(DatabaseHelper.COL_USERNAME));
+            @SuppressLint("Range") String imageUri = cursor.getString(cursor.getColumnIndex(DatabaseHelper.COL_IMAGE_URI));
+            user = new User(email, username, imageUri);
+            cursor.close();
+        }
+        db.close();
+        return user;
+    }
+
 }

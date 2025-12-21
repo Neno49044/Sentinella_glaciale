@@ -20,12 +20,15 @@ public class RegisterActivity extends AppCompatActivity {
     ImageView imgProfile;
     LinearLayout layoutProfilePicker;
     Button btnRegister;
+    ImageView btnBack;
+
 
 
     private final int[] avatars = {
             R.drawable.ic_sentinella,
             R.drawable.sentinella2,
-            R.drawable.sentinella3
+            R.drawable.sentinella3,
+            R.drawable.sentinella4
     };
 
     private int selectedAvatarResId = -1;
@@ -42,6 +45,8 @@ public class RegisterActivity extends AppCompatActivity {
         layoutProfilePicker = findViewById(R.id.layoutProfilePicker);
         btnRegister = findViewById(R.id.btnRegister);
 
+        btnBack = findViewById(R.id.btnBack);
+        btnBack.setOnClickListener(v -> finish());
 
         layoutProfilePicker.setOnClickListener(v -> showAvatarSelection());
 
@@ -131,5 +136,6 @@ public class RegisterActivity extends AppCompatActivity {
             Toast.makeText(this, "Email già registrata", Toast.LENGTH_SHORT).show();
         }
     }
+
 }
 

@@ -4,6 +4,9 @@
     <string name="title_mappa">Mappa</string>
     <string name="title_eventi">Eventi</string>
     <string name="title_quiz">Quiz</string>
+    <string name="navigation_drawer_open">Apri menu di navigazione</string>
+    <string name="navigation_drawer_close">Chiudi menu di navigazione</string>
+
 
     <!--Stringhe utili per la sezione educazione-->
     <string name="button_quiz">Mettiti alla prova!</string>

@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item
+    android:id="@+id/nav_email"
+    android:title="email@example.com"
+    android:enabled="true"
+    android:icon="@drawable/ic_email" />
+
+<item
+    android:id="@+id/nav_logout"
+    android:title="Logout"
+    android:icon="@drawable/ic_logout" />
+</menu>
