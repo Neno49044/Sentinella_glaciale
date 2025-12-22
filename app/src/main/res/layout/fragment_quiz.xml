@@ -12,7 +12,6 @@
         android:layout_height="match_parent"
         android:fillViewport="true">
 
-        <!-- Contenuto -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -44,21 +43,29 @@
             android:layout_marginTop="10dp">
 
             <RadioButton android:id="@+id/rb_opzione11" android:text="@string/opzione11"
+                android:button="@null"
+                android:drawableStart="@drawable/quiz_bullet"
+                android:drawablePadding="12dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:buttonTint="@color/radio_button_color"/>
+                android:layout_height="wrap_content"/>
             <RadioButton android:id="@+id/rb_opzione12" android:text="@string/opzione12"
+                android:button="@null"
+                android:drawableStart="@drawable/quiz_bullet_giusto"
+                android:drawablePadding="12dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:buttonTint="@color/radio_button_color"/>
+                android:layout_height="wrap_content"/>
             <RadioButton android:id="@+id/rb_opzione13" android:text="@string/opzione13"
+                android:button="@null"
+                android:drawableStart="@drawable/quiz_bullet"
+                android:drawablePadding="12dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:buttonTint="@color/radio_button_color"/>
+                android:layout_height="wrap_content"/>
             <RadioButton android:id="@+id/rb_opzione14" android:text="@string/opzione14"
+                android:button="@null"
+                android:drawableStart="@drawable/quiz_bullet"
+                android:drawablePadding="12dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:buttonTint="@color/radio_button_color"/>
+                android:layout_height="wrap_content"/>
 
         </RadioGroup>
         <TextView
@@ -85,21 +92,29 @@
             android:layout_marginTop="10dp">
 
             <RadioButton android:id="@+id/rb_opzione21" android:text="@string/opzione21"
+                android:button="@null"
+                android:drawableStart="@drawable/quiz_bullet"
+                android:drawablePadding="12dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:buttonTint="@color/radio_button_color"/>
+                android:layout_height="wrap_content" />
             <RadioButton android:id="@+id/rb_opzione22" android:text="@string/opzione22"
+                android:button="@null"
+                android:drawableStart="@drawable/quiz_bullet"
+                android:drawablePadding="12dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:buttonTint="@color/radio_button_color"/>
+                android:layout_height="wrap_content"/>
             <RadioButton android:id="@+id/rb_opzione23" android:text="@string/opzione23"
+                android:button="@null"
+                android:drawableStart="@drawable/quiz_bullet_giusto"
+                android:drawablePadding="12dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:buttonTint="@color/radio_button_color"/>
+                android:layout_height="wrap_content"/>
             <RadioButton android:id="@+id/rb_opzione24" android:text="@string/opzione24"
+                android:button="@null"
+                android:drawableStart="@drawable/quiz_bullet"
+                android:drawablePadding="12dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:buttonTint="@color/radio_button_color"/>
+                android:layout_height="wrap_content"/>
 
         </RadioGroup>
         <TextView
@@ -126,21 +141,29 @@
             android:layout_marginTop="10dp">
 
             <RadioButton android:id="@+id/rb_opzione31" android:text="@string/opzione31"
+                android:button="@null"
+                android:drawableStart="@drawable/quiz_bullet"
+                android:drawablePadding="12dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:buttonTint="@color/radio_button_color"/>
+                android:layout_height="wrap_content"/>
             <RadioButton android:id="@+id/rb_opzione32" android:text="@string/opzione32"
+                android:button="@null"
+                android:drawableStart="@drawable/quiz_bullet"
+                android:drawablePadding="12dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:buttonTint="@color/radio_button_color"/>
+                android:layout_height="wrap_content"/>
             <RadioButton android:id="@+id/rb_opzione33" android:text="@string/opzione33"
+                android:button="@null"
+                android:drawableStart="@drawable/quiz_bullet"
+                android:drawablePadding="12dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:buttonTint="@color/radio_button_color"/>
+                android:layout_height="wrap_content"/>
             <RadioButton android:id="@+id/rb_opzione34" android:text="@string/opzione34"
+                android:button="@null"
+                android:drawableStart="@drawable/quiz_bullet_giusto"
+                android:drawablePadding="12dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:buttonTint="@color/radio_button_color"/>
+                android:layout_height="wrap_content"/>
 
         </RadioGroup>
         <TextView

@@ -24,9 +24,34 @@
         la regione alpina si riscalda circa due volte più velocemente della media globale,
         rendendo i ghiacciai particolarmente vulnerabili</string>
     <string name="titolo_edu3">ALTRE CAUSE</string>
-    <string name="info_generali3">Poi metterò un elenco puntato</string>
+    <string name="info_generali3_bullet1">La riduzione delle nevicate e l\'aumento delle
+        precipitazioni sotto forma di pioggia anziché neve, diminuiscono l’accumulo di massa glaciale.
+    </string>
+    <string name="info_generali3_bullet2">Effetto albedo ridotto: quando la superficie del
+        ghiacciaio diminuisce, si riduce la riflessione della luce solare (albedo), aumentando
+        l’assorbimento di calore e accelerando la fusione.
+    </string>
+    <string name="info_generali3_bullet3">Presenza di polveri e fuliggine su ghiaccio e neve,
+        che scuriscono la superficie favorendo l’assorbimento di calore.
+    </string>
     <string name="titolo_edu4">CONSEGUENZE</string>
     <string name="info_generali4">Poi metterò un elenco puntato</string>
+    <string name="info_generali4_bullet1">Risorse idriche: i ghiacciai alpini fungono da serbatoi
+        naturali di acqua dolce: rilasciano acqua gradualmente durante l’estate, alimentando fiumi
+        e bacini idrici. Il loro ritiro riduce questa riserva, con impatti su acqua potabile,
+        agricoltura e produzione energetica (idroelettrica). In molte aree montane e basse pianure,
+        la diminuzione del flusso estivo dei fiumi può portare a siccità più frequenti e intense.
+    </string>
+    <string name="info_generali4_bullet2">Rischi naturali: la destabilizzazione del paesaggio
+        montano dovuta allo scioglimento dei ghiacciai e del permafrost aumenta il rischio di frane,
+        cadute di massi e colate detritiche. Inoltre, il rapido ritiro può portare alla formazione
+        di laghi glaciali instabili, con rischio di rottura delle dighe naturali e alluvioni improvvise.
+    </string>
+    <string name="info_generali4_bullet3">Biodiversità e paesaggio: la perdita di ghiaccio
+        modifica gli ecosistemi alpini: specie adattate al freddo si trovano in difficoltà,
+        mentre altre si spostano in altitudini più alte. Ciò altera i ritmi stagionali,
+        habitat e bilanci ecologici.
+    </string>
 
     <!--Stringhe utili per la parte del quiz-->
     <string name="domanda1">1) Quale delle seguenti è una delle principali cause dello scioglimento dei ghiacciai?</string>

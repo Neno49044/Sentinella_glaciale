@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.educazione.educazioneFragment">
 
     <androidx.core.widget.NestedScrollView
@@ -26,12 +27,23 @@
             android:textAlignment="center"
             android:textSize="20sp" />
 
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_sentinella"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="start"
+            android:layout_marginBottom="16dp" />
+
         <TextView
             android:id="@+id/titolo_educazione1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="-40dp"
+            android:layout_marginStart="30dp"
             android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#87CEEB"
             android:text="@string/titolo_edu1"/>
 
         <TextView
@@ -42,12 +54,23 @@
             android:textSize="18sp"
             android:text="@string/info_generali1"/>
 
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/sentinella2"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="start"
+            android:layout_marginBottom="16dp" />
+
         <TextView
             android:id="@+id/titolo_educazione2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="-40dp"
+            android:layout_marginStart="30dp"
             android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#FFA500"
             android:text="@string/titolo_edu2"/>
 
         <TextView
@@ -58,37 +81,87 @@
             android:textSize="18sp"
             android:text="@string/info_generali2"/>
 
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/sentinella3"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="start"
+            android:layout_marginBottom="16dp" />
+
         <TextView
             android:id="@+id/titolo_educazione3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="-40dp"
+            android:layout_marginStart="30dp"
             android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#00FF00"
             android:text="@string/titolo_edu3"/>
 
         <TextView
-            android:id="@+id/scheda_educazione3"
+            android:id="@+id/scheda_educazione3_bullet1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:textSize="18sp"
-            android:text="@string/info_generali3"/>
+            android:text="@string/info_generali3_bullet1"/>
+        <TextView
+            android:id="@+id/scheda_educazione3_bullet2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="18sp"
+            android:text="@string/info_generali3_bullet2"/>
+        <TextView
+            android:id="@+id/scheda_educazione3_bullet3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="18sp"
+            android:text="@string/info_generali3_bullet3"/>
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/sentinella4"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="start"
+            android:layout_marginBottom="16dp" />
 
         <TextView
             android:id="@+id/titolo_educazione4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="-40dp"
+            android:layout_marginStart="30dp"
             android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#800080"
             android:text="@string/titolo_edu4"/>
 
         <TextView
-            android:id="@+id/scheda_educazione4"
+            android:id="@+id/scheda_educazione4_bullet1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:textSize="18sp"
-            android:text="@string/info_generali4"/>
+            android:text="@string/info_generali4_bullet1"/>
+        <TextView
+            android:id="@+id/scheda_educazione4_bullet2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="18sp"
+            android:text="@string/info_generali4_bullet2"/>
+        <TextView
+            android:id="@+id/scheda_educazione4_bullet3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="18sp"
+            android:text="@string/info_generali4_bullet3"/>
 
         <Button
             android:id="@+id/button_educazione"

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 1. PRIORITÀ: Disabilitato + Selezionato -->
+    <item android:state_enabled="false" android:state_checked="true">
+        <layer-list>
+            <item android:drawable="@drawable/sentinella3"
+                android:width="20dp"
+                android:height="20dp"/>
+        </layer-list>
+    </item>
+
+    <!-- 2. Disabilitato + Non selezionato -->
+    <item android:state_enabled="false">
+        <layer-list>
+            <item android:drawable="@drawable/ic_circle"
+                android:width="20dp"
+                android:height="20dp"/>
+        </layer-list>
+    </item>
+
+    <!-- 3. Abilitato + Selezionato -->
+    <item android:state_checked="true">
+        <layer-list>
+            <item android:drawable="@drawable/ic_sentinella"
+                android:width="20dp"
+                android:height="20dp"/>
+        </layer-list>
+    </item>
+
+    <!-- 4. Normale (abilitato + non selezionato) -->
+    <item>
+        <layer-list>
+            <item android:drawable="@drawable/ic_circle"
+                android:width="20dp"
+                android:height="20dp"/>
+        </layer-list>
+    </item>
+</selector>
