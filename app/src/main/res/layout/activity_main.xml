@@ -50,7 +50,14 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
+
         app:headerLayout="@layout/drawer_header"
-        app:menu="@menu/drawer_menu" />
+        app:menu="@menu/drawer_menu"
+
+        app:itemTextAppearance="@style/DrawerText"
+        app:itemIconTint="?attr/colorOnSurface"
+        app:itemTextColor="?attr/colorOnSurface"
+        app:itemHorizontalPadding="24dp"
+        app:itemVerticalPadding="12dp" />
 
 </androidx.drawerlayout.widget.DrawerLayout>
