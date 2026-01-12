@@ -74,5 +74,11 @@
     <string name="soluzione3">La soluzione corretta è la numero 4: Il doppio.</string>
     <string name="button_soluzione">Invia le risposte</string>
     <string name="button_finequiz">Torna indietro</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--Stringhe utili per la parte dei ghiacciai-->
+    <string name="chiudi">Chiudi</string>
+    <string name="info_non_disponibili">Informazioni non disponibili per questo ghiacciaio.</string>
 
 </resources>

@@ -11,11 +11,20 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.sentinellaglaciale.databinding.FragmentMappaBinding;
+
+//Classi della libreria OSMDroid
 import org.osmdroid.config.Configuration;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
 import org.osmdroid.views.overlay.Marker;
+
+import org.osmdroid.views.overlay.infowindow.InfoWindow;
+
 import java.util.List;
+import com.example.sentinellaglaciale.ui.mappa.Ghiacciaio;
+import com.example.sentinellaglaciale.ui.mappa.DettagliGhiacciaioFragment;
+import com.example.sentinellaglaciale.R;
+
 
 public class mappaFragment extends Fragment {
 
@@ -27,47 +36,53 @@ public class mappaFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        // Inizializzazione ViewModel (puoi usarlo più avanti per dati della mappa)
-        mappaViewModel mappaViewModel =
-                new ViewModelProvider(this).get(mappaViewModel.class);
+        mappaViewModel mappaViewModel = new ViewModelProvider(this).get(mappaViewModel.class);
 
-        // Inizializzazione ViewBinding
         binding = FragmentMappaBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-
-        // Inizializzazione osmdroid
         Configuration.getInstance().setUserAgentValue(requireContext().getPackageName());
 
-        // Recupero MapView dal binding
-        map = binding.map; // qui "map" è l'ID che hai dato nel layout fragment_mappa.xml
+        map = binding.map;
         //map.setMultiTouchControls(true);
-        map.setBuiltInZoomControls(true);   // mostra i bottoni + e -
-        map.setMultiTouchControls(true);    // permette pinch zoom
+        map.setBuiltInZoomControls(true);// mostra i bottoni + e -
+        map.setMultiTouchControls(true);// permette pinch zoom
 
+        map.setOnTouchListener((v, event) -> {
+            if (event.getAction() == android.view.MotionEvent.ACTION_DOWN) {
+                InfoWindow.closeAllInfoWindowsOn(map);
+            }
+            return false; // IMPORTANTISSIMO
+        });
 
         // Centro la mappa su Belluno
         GeoPoint startPoint = new GeoPoint(46.1391, 12.2172);
         map.getController().setZoom(10.5);
         map.getController().setCenter(startPoint);
 
-        mappaViewModel.getGhiacciai().observe(
-                getViewLifecycleOwner(),
-                geoPoints -> {
-                    map.getOverlays().clear();
+        mappaViewModel.getGhiacciai().observe(getViewLifecycleOwner(), listaGhiacciai -> {
+            map.getOverlays().clear();
+            GhiacciaioInfoWindow infoWindow = new GhiacciaioInfoWindow(map, requireActivity());
+            for (Ghiacciaio ghiacciaio : listaGhiacciai) {
 
-                    for (GeoPoint point : geoPoints) {
-                        Marker marker = new Marker(map);
-                        marker.setPosition(point);
-                        marker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
-                        marker.setTitle("Ghiacciaio");
+                GeoPoint geoPoint = new GeoPoint(
+                        ghiacciaio.getLatitudine(),
+                        ghiacciaio.getLongitudine()
+                );
 
-                        map.getOverlays().add(marker);
-                    }
+                Marker ghiacciaioMarker = new Marker(map);
+                ghiacciaioMarker.setPosition(geoPoint);
+                ghiacciaioMarker.setAnchor(
+                        Marker.ANCHOR_CENTER,
+                        Marker.ANCHOR_BOTTOM
+                );
 
-                    map.invalidate(); // forza il redraw
-                }
-        );
-
+                ghiacciaioMarker.setTitle(ghiacciaio.getNome());
+                ghiacciaioMarker.setRelatedObject(ghiacciaio);
+                ghiacciaioMarker.setInfoWindow(infoWindow);
+                map.getOverlays().add(ghiacciaioMarker);
+            }
+            map.invalidate();
+        });
         return root;
     }
 
