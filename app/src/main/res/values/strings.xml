@@ -85,6 +85,13 @@
     <string name="titolo_bacino">Bacino idrografico:</string>
     <string name="titolo_descrizione">Descrizione:</string>
     <string name="info_non_disponibili">Informazioni non disponibili per questo ghiacciaio.</string>
+    <string name="preferito">Preferito</string>
+    <string name="cambia_preferito">Cambia ghiacciaio preferito</string>
+    <string name="si">Sì</string>
+    <string name="no">No</string>
+    <string name="preferito_gia_presente">Hai già un ghiacciaio preferito (%1$s). Vuoi cambiarlo?</string>
+    <string name="ghiacciaio_preferito_label">Ghiacciaio preferito: %1$s</string>
+    <string name="nessun_preferito">nessuno</string>
 
     <!-- CRISTALLO -->
     <string name="raggruppamento_cristallo">Dolomiti Nord Orientali</string>
@@ -130,7 +137,7 @@
     <string name="bacino_marmolada">Piave</string>
     <string name="descrizione_marmolada">Il ghiacciaio della Marmolada è un ghiacciaio vallivo che scende
         lungo il versante settentrionale della Marmolada, la montagna più alta delle Dolomiti. E’ collocato
-        nella provincia di Trento e da esso prende forma il torrente Avisio.\nCome tutti i ghiacciai delle
+        in provincia di Trento e da esso prende forma il torrente Avisio.\nCome tutti i ghiacciai delle
         Alpi, anche il ghiacciaio della Marmolada si è ultimamente molto ritirato. Nell’arco di un secolo
         le sue dimensioni si sono più che dimezzate: nel 2013 misurava 190 ettari, mentre nel 1910 misurava 450 ettari.\n
         \nCURIOSITA’: Nel 1916, durante la Grande Guerra, i genieri dell’esercito austro ungarico realizzarono

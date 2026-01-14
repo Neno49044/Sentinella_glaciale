@@ -20,11 +20,9 @@ import org.osmdroid.views.overlay.Marker;
 
 import org.osmdroid.views.overlay.infowindow.InfoWindow;
 
-import java.util.List;
-import com.example.sentinellaglaciale.ui.mappa.Ghiacciaio;
-import com.example.sentinellaglaciale.ui.mappa.DettagliGhiacciaioFragment;
 import com.example.sentinellaglaciale.R;
-
+import com.example.sentinellaglaciale.ui.Ghiacciaio;
+import com.example.sentinellaglaciale.ui.GhiacciaioRepository;
 
 public class mappaFragment extends Fragment {
 
@@ -60,6 +58,7 @@ public class mappaFragment extends Fragment {
         map.getController().setCenter(startPoint);
 
         mappaViewModel.getGhiacciai().observe(getViewLifecycleOwner(), listaGhiacciai -> {
+            GhiacciaioRepository.getInstance().setGhiacciai(listaGhiacciai);
             map.getOverlays().clear();
             GhiacciaioInfoWindow infoWindow = new GhiacciaioInfoWindow(map, requireActivity());
             for (Ghiacciaio ghiacciaio : listaGhiacciai) {
@@ -79,6 +78,23 @@ public class mappaFragment extends Fragment {
                 ghiacciaioMarker.setTitle(ghiacciaio.getNome());
                 ghiacciaioMarker.setRelatedObject(ghiacciaio);
                 ghiacciaioMarker.setInfoWindow(infoWindow);
+
+                // 🔹 Listener per aprire dettagli
+                ghiacciaioMarker.setOnMarkerClickListener((marker, mapView) -> {
+                    Bundle args = new Bundle();
+                    args.putSerializable("ghiacciaio", ghiacciaio); // passo l'oggetto
+                    DettagliGhiacciaioFragment fragment = new DettagliGhiacciaioFragment();
+                    fragment.setArguments(args);
+
+                    requireActivity()
+                            .getSupportFragmentManager()
+                            .beginTransaction()
+                            .replace(R.id.nav_host_fragment_activity_main, fragment) // ID corretto dell'activity_main
+                            .addToBackStack(null)
+                            .commit();
+                    return true; // il click è gestito
+                });
+
                 map.getOverlays().add(ghiacciaioMarker);
             }
             map.invalidate();

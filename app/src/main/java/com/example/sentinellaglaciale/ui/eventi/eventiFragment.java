@@ -12,6 +12,8 @@ import androidx.fragment.app.Fragment;
 import com.example.sentinellaglaciale.R;
 import com.example.sentinellaglaciale.databinding.EventItemBinding;
 import com.example.sentinellaglaciale.databinding.FragmentEventiBinding;
+import com.example.sentinellaglaciale.ui.Ghiacciaio;
+import com.example.sentinellaglaciale.ui.GhiacciaioRepository;
 
 public class eventiFragment extends Fragment {
 
@@ -26,6 +28,9 @@ public class eventiFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        // Mostra il ghiacciaio preferito
+        aggiornaTestoPreferito();
 
         // Event 1
         EventItemBinding event1Binding = EventItemBinding.bind(binding.getRoot().findViewById(R.id.event_1));
@@ -44,6 +49,14 @@ public class eventiFragment extends Fragment {
         event2Binding.eventLocation.setText("xxx, xx");
         event2Binding.eventDescription.setText("...descrizione evento...");
         event2Binding.participateButton.setOnClickListener(v -> event2Binding.participateButton.setText("ISCRITTO!"));
+    }
+
+    //momentaneo, dopo magari lo togliamo
+    private void aggiornaTestoPreferito() {
+        GhiacciaioRepository repo = GhiacciaioRepository.getInstance();
+        Ghiacciaio preferito = repo.getPreferito();
+        String nomePreferito = (preferito != null) ? preferito.getNome() : getString(R.string.nessun_preferito);
+        binding.txtPreferitoEventi.setText(getString(R.string.ghiacciaio_preferito_label, nomePreferito));
     }
 
     @Override

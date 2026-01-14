@@ -7,13 +7,16 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import com.example.sentinellaglaciale.R;
 
+import com.example.sentinellaglaciale.R;
 import com.example.sentinellaglaciale.databinding.FragmentDettagliGhiacciaioBinding;
+import com.example.sentinellaglaciale.ui.Ghiacciaio;
+import com.example.sentinellaglaciale.ui.GhiacciaioRepository;
 
 public class DettagliGhiacciaioFragment extends Fragment {
 
     private FragmentDettagliGhiacciaioBinding binding;
+    private Ghiacciaio ghiacciaioCorrente;
 
     public DettagliGhiacciaioFragment() {
         // Costruttore vuoto obbligatorio
@@ -26,102 +29,153 @@ public class DettagliGhiacciaioFragment extends Fragment {
             Bundle savedInstanceState
     ) {
         binding = FragmentDettagliGhiacciaioBinding.inflate(inflater, container, false);
-        binding.btnClose.setOnClickListener(v -> {
-            requireActivity()
-                    .getSupportFragmentManager()
-                    .popBackStack();
-        });
 
-        //scheda informativa
+        // Bottone chiusura
+        binding.btnClose.setOnClickListener(v ->
+                requireActivity().getSupportFragmentManager().popBackStack()
+        );
+
+        // Recupero il ghiacciaio reale dalla lista Repository tramite l'oggetto passato
         if (getArguments() != null) {
-            Ghiacciaio g = (Ghiacciaio) getArguments().getSerializable("ghiacciaio");
-            if (g != null) {
-                String nome = g.getNome();
-                binding.txtTitolo.setText(nome);
+            // Cerchiamo l'oggetto Ghiacciaio passato (usando la chiave "ghiacciaio")
+            Ghiacciaio gPassato = (Ghiacciaio) getArguments().getSerializable("ghiacciaio");
 
-                String raggruppamento;
-                String ghiacciai;
-                String bacino;
-                String descrizione;
-
-                switch (nome) {
-
-                    case "Cristallo":
-                        raggruppamento = getString(R.string.raggruppamento_cristallo);
-                        ghiacciai = getString(R.string.ghiacciai_cristallo);
-                        bacino = getString(R.string.bacino_cristallo);
-                        descrizione = getString(R.string.descrizione_cristallo);
-                    break;
-
-                    case "Pale di San Martino":
-                        raggruppamento = getString(R.string.raggruppamento_paledisanmartino);
-                        ghiacciai = getString(R.string.ghiacciai_paledisanmartino);
-                        bacino = getString(R.string.bacino_paledisanmartino);
-                        descrizione = getString(R.string.descrizione_paledisanmartino);
-                    break;
-
-                    case "Marmolada":
-                        raggruppamento = getString(R.string.raggruppamento_marmolada);
-                        ghiacciai = getString(R.string.ghiacciai_marmolada);
-                        bacino = getString(R.string.bacino_marmolada);
-                        descrizione = getString(R.string.descrizione_marmolada);
-                    break;
-
-                    case "Civetta":
-                        raggruppamento = getString(R.string.raggruppamento_civetta);
-                        ghiacciai = getString(R.string.ghiacciai_civetta);
-                        bacino = getString(R.string.bacino_civetta);
-                        descrizione = getString(R.string.descrizione_civetta);
-                    break;
-
-                    case "Pelmo":
-                        raggruppamento = getString(R.string.raggruppamento_pelmo);
-                        ghiacciai = getString(R.string.ghiacciai_pelmo);
-                        bacino = getString(R.string.bacino_pelmo);
-                        descrizione = getString(R.string.descrizione_pelmo);
-                    break;
-
-                    case "Tofane":
-                        raggruppamento = getString(R.string.raggruppamento_tofane);
-                        ghiacciai = getString(R.string.ghiacciai_tofane);
-                        bacino = getString(R.string.bacino_tofane);
-                        descrizione = getString(R.string.descrizione_tofane);
-                    break;
-
-                    case "Antelao-Marmarole":
-                        raggruppamento = getString(R.string.raggruppamento_antelaomarmarole);
-                        ghiacciai = getString(R.string.ghiacciai_antelaomarmarole);
-                        bacino = getString(R.string.bacino_antelaomarmarole);
-                        descrizione = getString(R.string.descrizione_antelaomarmarole);
-                    break;
-
-                    case "Sorapis":
-                        raggruppamento = getString(R.string.raggruppamento_sorapis);
-                        ghiacciai = getString(R.string.ghiacciai_sorapis);
-                        bacino = getString(R.string.bacino_sorapis);
-                        descrizione = getString(R.string.descrizione_sorapis);
-                    break;
-
-                    case "Cadini-Popera":
-                        raggruppamento = getString(R.string.raggruppamento_cadinipopera);
-                        ghiacciai = getString(R.string.ghiacciai_cadinipopera);
-                        bacino = getString(R.string.bacino_cadinipopera);
-                        descrizione = getString(R.string.descrizione_cadinipopera);
-                    break;
-
-                    default:
-                        raggruppamento = getString(R.string.info_non_disponibili);
-                        ghiacciai = getString(R.string.info_non_disponibili);
-                        bacino = getString(R.string.info_non_disponibili);
-                        descrizione = getString(R.string.info_non_disponibili);
+            if (gPassato != null) {
+                GhiacciaioRepository repo = GhiacciaioRepository.getInstance();
+                for (Ghiacciaio g : repo.getGhiacciai()) {
+                    if (g.getNome().equals(gPassato.getNome())) {
+                        ghiacciaioCorrente = g;
+                        break;
+                    }
                 }
-                binding.txtRaggruppamento.setText(raggruppamento);
-                binding.txtGhiacciai.setText(ghiacciai);
-                binding.txtBacino.setText(bacino);
-                binding.txtDescrizione.setText(descrizione);
+            }
+
+            if (ghiacciaioCorrente != null) {
+                binding.txtTitolo.setText(ghiacciaioCorrente.getNome());
+                aggiornaStella();
+                popolaCampi(ghiacciaioCorrente);
             }
         }
+
+        // Gestione stellina preferito
+        binding.btnPreferito.setOnClickListener(v -> {
+            if (ghiacciaioCorrente == null) return;
+            GhiacciaioRepository repo = GhiacciaioRepository.getInstance();
+            Ghiacciaio preferitoAttuale = repo.getPreferito();
+
+            if (ghiacciaioCorrente.getPreferito()) {
+                // Deseleziono
+                repo.rimuoviPreferito();
+                aggiornaStella();
+            } else if (preferitoAttuale == null) {
+                // Nessun preferito → imposto
+                impostaComePreferito();
+            } else {
+                // Preferito già presente → chiedo conferma
+                mostraDialogConferma(preferitoAttuale);
+            }
+        });
+
         return binding.getRoot();
+    }
+
+    // Aggiorna icona stellina
+    private void aggiornaStella() {
+        if (ghiacciaioCorrente != null && ghiacciaioCorrente.getPreferito()) {
+            binding.btnPreferito.setImageResource(R.drawable.ic_star_filled);
+        } else {
+            binding.btnPreferito.setImageResource(R.drawable.ic_star_outline);
+        }
+    }
+
+    // Imposta il ghiacciaio corrente come preferito
+    private void impostaComePreferito() {
+        GhiacciaioRepository repo = GhiacciaioRepository.getInstance();
+        repo.impostaPreferito(ghiacciaioCorrente);
+        aggiornaStella();
+    }
+
+    // Mostra dialog di conferma quando c'è già un preferito
+    private void mostraDialogConferma(Ghiacciaio vecchioPreferito) {
+        new androidx.appcompat.app.AlertDialog.Builder(requireContext())
+                .setTitle(R.string.cambia_preferito)
+                .setMessage(getString(R.string.preferito_gia_presente, vecchioPreferito.getNome()))
+                .setPositiveButton(R.string.si, (dialog, which) -> impostaComePreferito())
+                .setNegativeButton(R.string.no, null)
+                .show();
+    }
+
+    // Popola tutti i campi della scheda in base al ghiacciaio
+    private void popolaCampi(Ghiacciaio g) {
+        String nome = g.getNome();
+        String raggruppamento, ghiacciai, bacino, descrizione;
+
+        switch (nome) {
+            case "Cristallo":
+                raggruppamento = getString(R.string.raggruppamento_cristallo);
+                ghiacciai = getString(R.string.ghiacciai_cristallo);
+                bacino = getString(R.string.bacino_cristallo);
+                descrizione = getString(R.string.descrizione_cristallo);
+                break;
+            case "Pale di San Martino":
+                raggruppamento = getString(R.string.raggruppamento_paledisanmartino);
+                ghiacciai = getString(R.string.ghiacciai_paledisanmartino);
+                bacino = getString(R.string.bacino_paledisanmartino);
+                descrizione = getString(R.string.descrizione_paledisanmartino);
+                break;
+            case "Marmolada":
+                raggruppamento = getString(R.string.raggruppamento_marmolada);
+                ghiacciai = getString(R.string.ghiacciai_marmolada);
+                bacino = getString(R.string.bacino_marmolada);
+                descrizione = getString(R.string.descrizione_marmolada);
+                break;
+            case "Civetta":
+                raggruppamento = getString(R.string.raggruppamento_civetta);
+                ghiacciai = getString(R.string.ghiacciai_civetta);
+                bacino = getString(R.string.bacino_civetta);
+                descrizione = getString(R.string.descrizione_civetta);
+                break;
+            case "Pelmo":
+                raggruppamento = getString(R.string.raggruppamento_pelmo);
+                ghiacciai = getString(R.string.ghiacciai_pelmo);
+                bacino = getString(R.string.bacino_pelmo);
+                descrizione = getString(R.string.descrizione_pelmo);
+                break;
+            case "Tofane":
+                raggruppamento = getString(R.string.raggruppamento_tofane);
+                ghiacciai = getString(R.string.ghiacciai_tofane);
+                bacino = getString(R.string.bacino_tofane);
+                descrizione = getString(R.string.descrizione_tofane);
+                break;
+            case "Antelao-Marmarole":
+                raggruppamento = getString(R.string.raggruppamento_antelaomarmarole);
+                ghiacciai = getString(R.string.ghiacciai_antelaomarmarole);
+                bacino = getString(R.string.bacino_antelaomarmarole);
+                descrizione = getString(R.string.descrizione_antelaomarmarole);
+                break;
+            case "Sorapis":
+                raggruppamento = getString(R.string.raggruppamento_sorapis);
+                ghiacciai = getString(R.string.ghiacciai_sorapis);
+                bacino = getString(R.string.bacino_sorapis);
+                descrizione = getString(R.string.descrizione_sorapis);
+                break;
+            case "Cadini-Popera":
+                raggruppamento = getString(R.string.raggruppamento_cadinipopera);
+                ghiacciai = getString(R.string.ghiacciai_cadinipopera);
+                bacino = getString(R.string.bacino_cadinipopera);
+                descrizione = getString(R.string.descrizione_cadinipopera);
+                break;
+            default:
+                raggruppamento = getString(R.string.info_non_disponibili);
+                ghiacciai = getString(R.string.info_non_disponibili);
+                bacino = getString(R.string.info_non_disponibili);
+                descrizione = getString(R.string.info_non_disponibili);
+        }
+
+        binding.txtRaggruppamento.setText(raggruppamento);
+        binding.txtGhiacciai.setText(ghiacciai);
+        binding.txtBacino.setText(bacino);
+        binding.txtDescrizione.setText(descrizione);
     }
 
     @Override
