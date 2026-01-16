@@ -3,6 +3,8 @@ package com.example.sentinellaglaciale;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -11,10 +13,14 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.sentinellaglaciale.database.User;
 import com.example.sentinellaglaciale.database.UserDao;
+import com.example.sentinellaglaciale.ui.Ghiacciaio;
+import com.example.sentinellaglaciale.ui.GhiacciaioRepository;
+import com.example.sentinellaglaciale.ui.mappa.DettagliGhiacciaioFragment;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.appbar.MaterialToolbar;
 
@@ -31,11 +37,16 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.example.sentinellaglaciale.databinding.ActivityMainBinding;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
+    private final ExecutorService executor = Executors.newSingleThreadExecutor();
+    private final Handler handler = new Handler(Looper.getMainLooper());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +68,13 @@ public class MainActivity extends AppCompatActivity {
                 binding.toolbar,
                 R.string.navigation_drawer_open,
                 R.string.navigation_drawer_close
-        );
+        ) {
+            @Override
+            public void onDrawerOpened(View drawerView) {
+                super.onDrawerOpened(drawerView);
+                updateFavoriteGlacierInMenu();
+            }
+        };
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
@@ -87,43 +104,90 @@ public class MainActivity extends AppCompatActivity {
 
 
         navigationView.setNavigationItemSelectedListener(item -> {
-            if (item.getItemId() == R.id.nav_logout) {
+            int itemId = item.getItemId();
+            if (itemId == R.id.nav_logout) {
                 startActivity(new Intent(this, LoginActivity.class));
                 finish();
+                return true;
+            } else if (itemId == R.id.nav_favorite) {
+                Ghiacciaio preferito = GhiacciaioRepository.getInstance().getPreferito();
+                if (preferito != null) {
+                    Bundle args = new Bundle();
+                    args.putSerializable("ghiacciaio", preferito);
+                    DettagliGhiacciaioFragment fragment = new DettagliGhiacciaioFragment();
+                    fragment.setArguments(args);
+
+                    getSupportFragmentManager()
+                            .beginTransaction()
+                            .replace(R.id.nav_host_fragment_activity_main, fragment)
+                            .addToBackStack(null)
+                            .commit();
+                }
+                drawerLayout.closeDrawers();
                 return true;
             }
             return false;
         });
 
+        loadInitialUserData();
+    }
+
+    private void loadInitialUserData() {
         SharedPreferences prefs = getSharedPreferences("MyAppPrefs", MODE_PRIVATE);
         String loggedUserEmail = prefs.getString("logged_user_email", null);
 
         if (loggedUserEmail != null) {
-            UserDao userDao = new UserDao(this);
-            User user = userDao.getUserByEmail(loggedUserEmail);
+            executor.execute(() -> {
+                UserDao userDao = new UserDao(this);
+                User user = userDao.getUserByEmail(loggedUserEmail);
 
-            if (user != null) {
-                navigationView = findViewById(R.id.navigation_view);
-
-                View headerView = navigationView.getHeaderView(0);
-
-                ImageView imgProfile = headerView.findViewById(R.id.imgProfile);
-                TextView etUsername = headerView.findViewById(R.id.etUsername);
-
-                etUsername.setText(user.getUsername());
-
-                int avatarResId = getResources().getIdentifier(user.getImageUri(), "drawable", getPackageName());
-                if (avatarResId != 0) {
-                    imgProfile.setImageResource(avatarResId);
-                } else {
-                    imgProfile.setImageResource(R.drawable.ic_profile_placeholder);
-                }
-                Menu menu = navigationView.getMenu();
-                MenuItem emailItem = menu.findItem(R.id.nav_email);
-                emailItem.setTitle(user.getEmail());
-            }
+                handler.post(() -> {
+                    if (user != null) {
+                        updateNavHeader(user);
+                        updateNavMenu(user);
+                        updateFavoriteGlacierInMenu(); // Also update on initial load
+                    }
+                });
+            });
         }
+    }
 
+    private void updateNavHeader(User user) {
+        View headerView = navigationView.getHeaderView(0);
+        ImageView imgProfile = headerView.findViewById(R.id.imgProfile);
+        TextView etUsername = headerView.findViewById(R.id.etUsername);
+
+        etUsername.setText(user.getUsername());
+
+        int avatarResId = getResources().getIdentifier(user.getImageUri(), "drawable", getPackageName());
+        if (avatarResId != 0) {
+            imgProfile.setImageResource(avatarResId);
+        } else {
+            imgProfile.setImageResource(R.drawable.ic_profile_placeholder);
+        }
+    }
+
+    private void updateNavMenu(User user) {
+        Menu menu = navigationView.getMenu();
+        MenuItem emailItem = menu.findItem(R.id.nav_email);
+        emailItem.setTitle(user.getEmail());
+    }
+
+    private void updateFavoriteGlacierInMenu() {
+        executor.execute(() -> {
+            Ghiacciaio preferito = GhiacciaioRepository.getInstance().getPreferito();
+            handler.post(() -> {
+                Menu menu = navigationView.getMenu();
+                MenuItem favoriteItem = menu.findItem(R.id.nav_favorite);
+                if (preferito != null) {
+                    String favoriteText = getString(R.string.ghiacciaio_preferito_label, preferito.getNome());
+                    favoriteItem.setTitle(favoriteText);
+                } else {
+                    String noFavoriteText = getString(R.string.ghiacciaio_preferito_label, getString(R.string.nessun_preferito));
+                    favoriteItem.setTitle(noFavoriteText);
+                }
+            });
+        });
     }
 
     @Override

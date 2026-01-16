@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.eventi.eventiFragment">
+    tools:context=".ui.eventi.EventiFragment">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -15,18 +15,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="8dp">
-
-            <!--momentanea, al massimo dopo la togliamo-->
-            <TextView
-                android:id="@+id/txt_preferito_eventi"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:text="@string/ghiacciaio_preferito_label"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="?attr/colorPrimary"
-                android:gravity="center_horizontal"/>
 
             <!-- Event 1 -->
             <include android:id="@+id/event_1" layout="@layout/event_item" />
