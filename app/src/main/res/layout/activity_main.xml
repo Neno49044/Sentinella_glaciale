@@ -53,10 +53,10 @@
 
         app:headerLayout="@layout/drawer_header"
         app:menu="@menu/drawer_menu"
+        app:itemMaxLines="2"
 
         app:itemTextAppearance="@style/DrawerText"
-        app:itemIconTint="?attr/colorOnSurface"
-        app:itemTextColor="?attr/colorOnSurface"
+        app:itemIconTint="@null"
         app:itemHorizontalPadding="24dp"
         app:itemVerticalPadding="12dp" />
 

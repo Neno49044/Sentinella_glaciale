@@ -58,7 +58,8 @@ public class mappaFragment extends Fragment {
         map.getController().setCenter(startPoint);
 
         mappaViewModel.getGhiacciai().observe(getViewLifecycleOwner(), listaGhiacciai -> {
-            GhiacciaioRepository.getInstance().setGhiacciai(listaGhiacciai);
+            GhiacciaioRepository repo = GhiacciaioRepository.getInstance();
+            repo.setGhiacciai(requireContext(), listaGhiacciai);
             map.getOverlays().clear();
             GhiacciaioInfoWindow infoWindow = new GhiacciaioInfoWindow(map, requireActivity());
             for (Ghiacciaio ghiacciaio : listaGhiacciai) {

@@ -5,37 +5,29 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.drawerlayout.widget.DrawerLayout;
-
-import com.example.sentinellaglaciale.database.User;
-import com.example.sentinellaglaciale.database.UserDao;
-import com.example.sentinellaglaciale.ui.Ghiacciaio;
-import com.example.sentinellaglaciale.ui.GhiacciaioRepository;
-import com.example.sentinellaglaciale.ui.mappa.DettagliGhiacciaioFragment;
-import com.google.android.material.navigation.NavigationView;
-import com.google.android.material.appbar.MaterialToolbar;
-
 import androidx.appcompat.app.ActionBarDrawerToggle;
-
-
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import com.example.sentinellaglaciale.database.User;
+import com.example.sentinellaglaciale.database.UserDao;
 import com.example.sentinellaglaciale.databinding.ActivityMainBinding;
+import com.example.sentinellaglaciale.ui.Ghiacciaio;
+import com.example.sentinellaglaciale.ui.GhiacciaioRepository;
+import com.example.sentinellaglaciale.ui.mappa.DettagliGhiacciaioFragment;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -55,12 +47,13 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        // Toolbar
         setSupportActionBar(binding.toolbar);
 
-        // Drawer
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.navigation_view);
+
+        navigationView.setItemIconTintList(null);
+        navigationView.setItemTextColor(null);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this,
@@ -101,7 +94,6 @@ public class MainActivity extends AppCompatActivity {
         );
 
         NavigationUI.setupWithNavController(navView, navController);
-
 
         navigationView.setNavigationItemSelectedListener(item -> {
             int itemId = item.getItemId();
@@ -174,20 +166,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateFavoriteGlacierInMenu() {
-        executor.execute(() -> {
-            Ghiacciaio preferito = GhiacciaioRepository.getInstance().getPreferito();
-            handler.post(() -> {
-                Menu menu = navigationView.getMenu();
-                MenuItem favoriteItem = menu.findItem(R.id.nav_favorite);
-                if (preferito != null) {
-                    String favoriteText = getString(R.string.ghiacciaio_preferito_label, preferito.getNome());
-                    favoriteItem.setTitle(favoriteText);
-                } else {
-                    String noFavoriteText = getString(R.string.ghiacciaio_preferito_label, getString(R.string.nessun_preferito));
-                    favoriteItem.setTitle(noFavoriteText);
-                }
-            });
-        });
+        Ghiacciaio preferito = GhiacciaioRepository.getInstance().getPreferito();
+        Menu menu = navigationView.getMenu();
+        MenuItem favoriteItem = menu.findItem(R.id.nav_favorite);
+
+        if (favoriteItem != null) {
+            if (preferito != null) {
+                favoriteItem.setTitle("Ghiacciaio preferito");
+            } else {
+                favoriteItem.setTitle("Nessun ghiacciaio selezionato");
+            }
+        }
     }
 
     @Override

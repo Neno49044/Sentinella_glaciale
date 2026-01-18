@@ -37,10 +37,10 @@ public class DettagliGhiacciaioFragment extends Fragment {
 
         // Recupero il ghiacciaio reale dalla lista Repository tramite l'oggetto passato
         if (getArguments() != null) {
-            // Cerchiamo l'oggetto Ghiacciaio passato (usando la chiave "ghiacciaio")
             Ghiacciaio gPassato = (Ghiacciaio) getArguments().getSerializable("ghiacciaio");
 
             if (gPassato != null) {
+                // Ripristino del ciclo per trovare l'oggetto corretto nel repository
                 GhiacciaioRepository repo = GhiacciaioRepository.getInstance();
                 for (Ghiacciaio g : repo.getGhiacciai()) {
                     if (g.getNome().equals(gPassato.getNome())) {
@@ -61,18 +61,14 @@ public class DettagliGhiacciaioFragment extends Fragment {
         binding.btnPreferito.setOnClickListener(v -> {
             if (ghiacciaioCorrente == null) return;
             GhiacciaioRepository repo = GhiacciaioRepository.getInstance();
-            Ghiacciaio preferitoAttuale = repo.getPreferito();
 
             if (ghiacciaioCorrente.getPreferito()) {
                 // Deseleziono
-                repo.rimuoviPreferito();
+                repo.rimuoviPreferito(requireContext());
                 aggiornaStella();
-            } else if (preferitoAttuale == null) {
-                // Nessun preferito → imposto
-                impostaComePreferito();
             } else {
-                // Preferito già presente → chiedo conferma
-                mostraDialogConferma(preferitoAttuale);
+                // Imposto come preferito
+                impostaComePreferito();
             }
         });
 
@@ -91,19 +87,12 @@ public class DettagliGhiacciaioFragment extends Fragment {
     // Imposta il ghiacciaio corrente come preferito
     private void impostaComePreferito() {
         GhiacciaioRepository repo = GhiacciaioRepository.getInstance();
-        repo.impostaPreferito(ghiacciaioCorrente);
+        repo.impostaPreferito(requireContext(), ghiacciaioCorrente);
         aggiornaStella();
     }
 
-    // Mostra dialog di conferma quando c'è già un preferito
-    private void mostraDialogConferma(Ghiacciaio vecchioPreferito) {
-        new androidx.appcompat.app.AlertDialog.Builder(requireContext())
-                .setTitle(R.string.cambia_preferito)
-                .setMessage(getString(R.string.preferito_gia_presente, vecchioPreferito.getNome()))
-                .setPositiveButton(R.string.si, (dialog, which) -> impostaComePreferito())
-                .setNegativeButton(R.string.no, null)
-                .show();
-    }
+    // Mostra dialog di conferma (rimosso perché ora sovrascriviamo sempre)
+    // private void mostraDialogConferma(Ghiacciaio vecchioPreferito) { ... }
 
     // Popola tutti i campi della scheda in base al ghiacciaio
     private void popolaCampi(Ghiacciaio g) {

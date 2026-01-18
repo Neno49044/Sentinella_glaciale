@@ -16,13 +16,14 @@
 
         <ImageView
             android:id="@+id/btnBack"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:src="@drawable/ic_arrow_back"
+            android:contentDescription="Torna indietro"
             android:layout_gravity="start"
             android:clickable="true"
             android:focusable="true"
-            android:padding="6dp"
+            android:padding="12dp"
             android:layout_marginBottom="16dp" />
 
 
@@ -120,5 +121,3 @@
 
     </LinearLayout>
 </ScrollView>
-
-
