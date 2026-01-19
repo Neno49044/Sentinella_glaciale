@@ -40,4 +40,11 @@
             app:destination="@id/navigation_educazione" />
     </fragment>
 
+    <!--per chiudere bene scheda ghiacciaio anche senza x -->
+    <fragment
+        android:id="@+id/navigation_dettagli"
+        android:name="com.example.sentinellaglaciale.ui.mappa.DettagliGhiacciaioFragment"
+        android:label="Dettagli Ghiacciaio"
+        tools:layout="@layout/fragment_dettagli_ghiacciaio" />
+
 </navigation>

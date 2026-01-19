@@ -55,6 +55,16 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <!-- IMMAGINE GHIACCIAIO -->
+            <ImageView
+                android:id="@+id/imgGhiacciaio"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:layout_marginBottom="16dp"
+                android:visibility="gone"
+                android:contentDescription="@string/app_name"/>
+
             <!-- RAGGRUPPAMENTO MONTUOSO -->
             <TextView
                 android:id="@+id/txtRaggruppamentoTitolo"

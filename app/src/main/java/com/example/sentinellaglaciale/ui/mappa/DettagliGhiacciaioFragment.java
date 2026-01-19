@@ -32,7 +32,7 @@ public class DettagliGhiacciaioFragment extends Fragment {
 
         // Bottone chiusura
         binding.btnClose.setOnClickListener(v ->
-                requireActivity().getSupportFragmentManager().popBackStack()
+                androidx.navigation.Navigation.findNavController(v).popBackStack()
         );
 
         // Recupero il ghiacciaio reale dalla lista Repository tramite l'oggetto passato
@@ -98,57 +98,67 @@ public class DettagliGhiacciaioFragment extends Fragment {
     private void popolaCampi(Ghiacciaio g) {
         String nome = g.getNome();
         String raggruppamento, ghiacciai, bacino, descrizione;
+        int immagine=0;
 
         switch (nome) {
             case "Cristallo":
+                immagine = R.drawable.foto_cristallo;
                 raggruppamento = getString(R.string.raggruppamento_cristallo);
                 ghiacciai = getString(R.string.ghiacciai_cristallo);
                 bacino = getString(R.string.bacino_cristallo);
                 descrizione = getString(R.string.descrizione_cristallo);
                 break;
             case "Pale di San Martino":
+                immagine = R.drawable.foto_paledisanmartino;
                 raggruppamento = getString(R.string.raggruppamento_paledisanmartino);
                 ghiacciai = getString(R.string.ghiacciai_paledisanmartino);
                 bacino = getString(R.string.bacino_paledisanmartino);
                 descrizione = getString(R.string.descrizione_paledisanmartino);
                 break;
             case "Marmolada":
+                immagine = R.drawable.foto_marmolada;
                 raggruppamento = getString(R.string.raggruppamento_marmolada);
                 ghiacciai = getString(R.string.ghiacciai_marmolada);
                 bacino = getString(R.string.bacino_marmolada);
                 descrizione = getString(R.string.descrizione_marmolada);
                 break;
             case "Civetta":
+                immagine = R.drawable.foto_civetta;
                 raggruppamento = getString(R.string.raggruppamento_civetta);
                 ghiacciai = getString(R.string.ghiacciai_civetta);
                 bacino = getString(R.string.bacino_civetta);
                 descrizione = getString(R.string.descrizione_civetta);
                 break;
             case "Pelmo":
+                immagine = R.drawable.foto_pelmo;
                 raggruppamento = getString(R.string.raggruppamento_pelmo);
                 ghiacciai = getString(R.string.ghiacciai_pelmo);
                 bacino = getString(R.string.bacino_pelmo);
                 descrizione = getString(R.string.descrizione_pelmo);
                 break;
             case "Tofane":
+                immagine = R.drawable.foto_tofane;
                 raggruppamento = getString(R.string.raggruppamento_tofane);
                 ghiacciai = getString(R.string.ghiacciai_tofane);
                 bacino = getString(R.string.bacino_tofane);
                 descrizione = getString(R.string.descrizione_tofane);
                 break;
             case "Antelao-Marmarole":
+                immagine = R.drawable.foto_antelaomarmarole;
                 raggruppamento = getString(R.string.raggruppamento_antelaomarmarole);
                 ghiacciai = getString(R.string.ghiacciai_antelaomarmarole);
                 bacino = getString(R.string.bacino_antelaomarmarole);
                 descrizione = getString(R.string.descrizione_antelaomarmarole);
                 break;
             case "Sorapis":
+                immagine = R.drawable.foto_sorapis;
                 raggruppamento = getString(R.string.raggruppamento_sorapis);
                 ghiacciai = getString(R.string.ghiacciai_sorapis);
                 bacino = getString(R.string.bacino_sorapis);
                 descrizione = getString(R.string.descrizione_sorapis);
                 break;
             case "Cadini-Popera":
+                immagine = R.drawable.foto_cadinipopera;
                 raggruppamento = getString(R.string.raggruppamento_cadinipopera);
                 ghiacciai = getString(R.string.ghiacciai_cadinipopera);
                 bacino = getString(R.string.bacino_cadinipopera);
@@ -161,6 +171,12 @@ public class DettagliGhiacciaioFragment extends Fragment {
                 descrizione = getString(R.string.info_non_disponibili);
         }
 
+        if (immagine != 0) {
+            binding.imgGhiacciaio.setImageResource(immagine);
+            binding.imgGhiacciaio.setVisibility(View.VISIBLE);
+        } else {
+            binding.imgGhiacciaio.setVisibility(View.GONE);
+        }
         binding.txtRaggruppamento.setText(raggruppamento);
         binding.txtGhiacciai.setText(ghiacciai);
         binding.txtBacino.setText(bacino);
