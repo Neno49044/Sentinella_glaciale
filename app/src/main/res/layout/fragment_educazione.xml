@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
+    android:background="@color/lightblue"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.educazione.educazioneFragment">
 
@@ -23,28 +23,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="70dp"
             android:layout_marginEnd="8dp"
             android:textAlignment="center"
             android:textSize="20sp" />
-
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:src="@drawable/ic_sentinella"
-            android:layout_marginTop="20dp"
-            android:layout_gravity="start"
-            android:layout_marginBottom="16dp" />
 
         <TextView
             android:id="@+id/titolo_educazione1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="-40dp"
-            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="#87CEEB"
+            android:textColor="@color/darkblue"
             android:text="@string/titolo_edu1"/>
 
         <TextView
@@ -55,23 +45,14 @@
             android:textSize="18sp"
             android:text="@string/info_generali1"/>
 
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:src="@drawable/sentinella2"
-            android:layout_marginTop="20dp"
-            android:layout_gravity="start"
-            android:layout_marginBottom="16dp" />
-
         <TextView
             android:id="@+id/titolo_educazione2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="-40dp"
-            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="#FFA500"
+            android:textColor="@color/darkblue"
             android:text="@string/titolo_edu2"/>
 
         <TextView
@@ -82,23 +63,14 @@
             android:textSize="18sp"
             android:text="@string/info_generali2"/>
 
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:src="@drawable/sentinella3"
-            android:layout_marginTop="20dp"
-            android:layout_gravity="start"
-            android:layout_marginBottom="16dp" />
-
         <TextView
             android:id="@+id/titolo_educazione3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="-40dp"
-            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="#00FF00"
+            android:textColor="@color/darkblue"
             android:text="@string/titolo_edu3"/>
 
         <TextView
@@ -123,23 +95,14 @@
             android:textSize="18sp"
             android:text="@string/info_generali3_bullet3"/>
 
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:src="@drawable/sentinella4"
-            android:layout_marginTop="20dp"
-            android:layout_gravity="start"
-            android:layout_marginBottom="16dp" />
-
         <TextView
             android:id="@+id/titolo_educazione4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="-40dp"
-            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="#800080"
+            android:textColor="@color/darkblue"
             android:text="@string/titolo_edu4"/>
 
         <TextView
@@ -166,8 +129,8 @@
 
         <Button
             android:id="@+id/button_educazione"
-            android:textColor="@color/teal_200"
-            android:backgroundTint="@color/black"
+            android:textColor="@color/lightblue"
+            android:backgroundTint="@color/darkblue"
             android:text="@string/button_quiz"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

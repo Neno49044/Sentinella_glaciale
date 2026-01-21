@@ -75,11 +75,41 @@ public class QuizFragment extends Fragment {
                 }else{
                     binding.solDomanda3.setTextColor(Color.parseColor("#FF0000"));
                 }
+                binding.rbOpzione41.setEnabled(false);
+                binding.rbOpzione42.setEnabled(false);
+                binding.rbOpzione43.setEnabled(false);
+                binding.rbOpzione44.setEnabled(false);
+                if(binding.rbOpzione42.isChecked()){
+                    binding.solDomanda4.setTextColor(Color.parseColor("#008000"));
+                }else{
+                    binding.solDomanda4.setTextColor(Color.parseColor("#FF0000"));
+                }
+                binding.rbOpzione51.setEnabled(false);
+                binding.rbOpzione52.setEnabled(false);
+                binding.rbOpzione53.setEnabled(false);
+                binding.rbOpzione54.setEnabled(false);
+                if(binding.rbOpzione51.isChecked()){
+                    binding.solDomanda5.setTextColor(Color.parseColor("#008000"));
+                }else{
+                    binding.solDomanda5.setTextColor(Color.parseColor("#FF0000"));
+                }
+                binding.rbOpzione61.setEnabled(false);
+                binding.rbOpzione62.setEnabled(false);
+                binding.rbOpzione63.setEnabled(false);
+                binding.rbOpzione64.setEnabled(false);
+                if(binding.rbOpzione64.isChecked()){
+                    binding.solDomanda6.setTextColor(Color.parseColor("#008000"));
+                }else{
+                    binding.solDomanda6.setTextColor(Color.parseColor("#FF0000"));
+                }
                 binding.buttonSoluzione.setVisibility(GONE);
                 binding.buttonQuizcompleto.setVisibility(VISIBLE);
                 binding.solDomanda1.setVisibility(VISIBLE);
                 binding.solDomanda2.setVisibility(VISIBLE);
                 binding.solDomanda3.setVisibility(VISIBLE);
+                binding.solDomanda4.setVisibility(VISIBLE);
+                binding.solDomanda5.setVisibility(VISIBLE);
+                binding.solDomanda6.setVisibility(VISIBLE);
             });
 
         binding.buttonQuizcompleto.setOnClickListener(v ->

@@ -72,10 +72,27 @@
     <string name="opzione33">Il triplo</string>
     <string name="opzione34">Il doppio</string>
     <string name="soluzione3">La soluzione corretta è la numero 4: Il doppio.</string>
+    <string name="domanda4">4) Quale di questi è un gas serra nocivo all\'ambiente e ai ghiacciai?</string>
+    <string name="opzione41">Azoto</string>
+    <string name="opzione42">Metano</string>
+    <string name="opzione43">Ossigeno</string>
+    <string name="opzione44">Argon</string>
+    <string name="soluzione4">La soluzione corretta è la numero 2: Metano.</string>
+    <string name="domanda5">5) Quale di queste non è una conseguenza a livello idrico dello scioglimento dei ghiacciai?</string>
+    <string name="opzione51">Riduzione del terreno pascolabile</string>
+    <string name="opzione52">Diminuzione della produzione di energia idroelettrica</string>
+    <string name="opzione53">Siccità più frequenti e intense</string>
+    <string name="opzione54">Riduzione del livello dell\'acqua dei bacini idrici</string>
+    <string name="soluzione5">La soluzione corretta è la numero 1: Riduzione del terreno pascolabile.</string>
+    <string name="domanda6">6) Quale di queste non è una conseguenza a livello di biodiversità dello scioglimento dei ghiacciai?</string>
+    <string name="opzione61">Alcune specie animali si spostano verso altitudini più alte</string>
+    <string name="opzione62">Alcune specie animali faticano ad adattarsi</string>
+    <string name="opzione63">I ritmi stagionali sono alterati</string>
+    <string name="opzione64">Gli habitat diventano più vari</string>
+    <string name="soluzione6">La soluzione corretta è la numero 4: Gli habitat diventano più vari.</string>
     <string name="button_soluzione">Invia le risposte</string>
     <string name="button_finequiz">Torna indietro</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 
     <!--Stringhe utili per la parte dei ghiacciai-->
     <string name="chiudi">Chiudi</string>

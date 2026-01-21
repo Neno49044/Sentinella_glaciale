@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.educazione.QuizFragment"
-    android:paddingTop="?attr/actionBarSize">
+    tools:context=".ui.educazione.QuizFragment">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -23,7 +23,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="10dp"
             android:layout_marginEnd="8dp"
             android:textAlignment="center"
             android:textSize="20sp"
@@ -35,6 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:textSize="18sp"
+            android:textColor="@color/darkblue"
             android:text="@string/domanda1"/>
         <RadioGroup
             android:id="@+id/domanda1"
@@ -84,6 +84,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:textSize="18sp"
+            android:textColor="@color/darkblue"
             android:text="@string/domanda2"/>
         <RadioGroup
             android:id="@+id/domanda2"
@@ -133,6 +134,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:textSize="18sp"
+            android:textColor="@color/darkblue"
             android:text="@string/domanda3"/>
         <RadioGroup
             android:id="@+id/domanda3"
@@ -176,15 +178,165 @@
             android:visibility="gone"
             />
 
+        <TextView
+            android:id="@+id/text_domanda4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textSize="18sp"
+            android:textColor="@color/darkblue"
+            android:text="@string/domanda4"/>
+        <RadioGroup
+            android:id="@+id/domanda4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <RadioButton android:id="@+id/rb_opzione41" android:text="@string/opzione41"
+                android:button="@null"
+                android:drawableStart="@drawable/quiz_bullet"
+                android:drawablePadding="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <RadioButton android:id="@+id/rb_opzione42" android:text="@string/opzione42"
+                android:button="@null"
+                android:drawableStart="@drawable/quiz_bullet_giusto"
+                android:drawablePadding="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <RadioButton android:id="@+id/rb_opzione43" android:text="@string/opzione43"
+                android:button="@null"
+                android:drawableStart="@drawable/quiz_bullet"
+                android:drawablePadding="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <RadioButton android:id="@+id/rb_opzione44" android:text="@string/opzione44"
+                android:button="@null"
+                android:drawableStart="@drawable/quiz_bullet"
+                android:drawablePadding="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </RadioGroup>
+        <TextView
+            android:id="@+id/sol_domanda4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="18sp"
+            android:text="@string/soluzione4"
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:id="@+id/text_domanda5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textSize="18sp"
+            android:textColor="@color/darkblue"
+            android:text="@string/domanda5"/>
+        <RadioGroup
+            android:id="@+id/domanda5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <RadioButton android:id="@+id/rb_opzione51" android:text="@string/opzione51"
+                android:button="@null"
+                android:drawableStart="@drawable/quiz_bullet_giusto"
+                android:drawablePadding="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <RadioButton android:id="@+id/rb_opzione52" android:text="@string/opzione52"
+                android:button="@null"
+                android:drawableStart="@drawable/quiz_bullet"
+                android:drawablePadding="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <RadioButton android:id="@+id/rb_opzione53" android:text="@string/opzione53"
+                android:button="@null"
+                android:drawableStart="@drawable/quiz_bullet"
+                android:drawablePadding="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <RadioButton android:id="@+id/rb_opzione54" android:text="@string/opzione54"
+                android:button="@null"
+                android:drawableStart="@drawable/quiz_bullet"
+                android:drawablePadding="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </RadioGroup>
+        <TextView
+            android:id="@+id/sol_domanda5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="18sp"
+            android:text="@string/soluzione5"
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:id="@+id/text_domanda6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textSize="18sp"
+            android:textColor="@color/darkblue"
+            android:text="@string/domanda6"/>
+        <RadioGroup
+            android:id="@+id/domanda6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <RadioButton android:id="@+id/rb_opzione61" android:text="@string/opzione61"
+                android:button="@null"
+                android:drawableStart="@drawable/quiz_bullet"
+                android:drawablePadding="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <RadioButton android:id="@+id/rb_opzione62" android:text="@string/opzione62"
+                android:button="@null"
+                android:drawableStart="@drawable/quiz_bullet"
+                android:drawablePadding="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <RadioButton android:id="@+id/rb_opzione63" android:text="@string/opzione63"
+                android:button="@null"
+                android:drawableStart="@drawable/quiz_bullet"
+                android:drawablePadding="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <RadioButton android:id="@+id/rb_opzione64" android:text="@string/opzione64"
+                android:button="@null"
+                android:drawableStart="@drawable/quiz_bullet_giusto"
+                android:drawablePadding="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </RadioGroup>
+        <TextView
+            android:id="@+id/sol_domanda6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="18sp"
+            android:text="@string/soluzione6"
+            android:visibility="gone"
+            />
+
         <Button
             android:id="@+id/button_soluzione"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="100dp"
-            android:backgroundTint="@color/black"
+            android:backgroundTint="@color/darkblue"
             android:text="@string/button_soluzione"
-            android:textColor="@color/teal_200" />
+            android:textColor="@color/lightblue" />
 
         <Button
             android:id="@+id/button_quizcompleto"
@@ -192,9 +344,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="0dp"
             android:layout_marginBottom="100dp"
-            android:backgroundTint="@color/black"
+            android:backgroundTint="@color/darkblue"
             android:text="@string/button_finequiz"
-            android:textColor="@color/teal_200"
+            android:textColor="@color/lightblue"
             android:visibility="gone"/>
 
         </LinearLayout>
