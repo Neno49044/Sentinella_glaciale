@@ -16,7 +16,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:paddingTop="16dp"
-            android:background="?attr/colorPrimary"
+            android:background="@color/darkblue"
             android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
             app:titleTextColor="@android:color/white"
             app:layout_constraintTop_toTopOf="parent"
@@ -40,6 +40,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:itemIconTint="@color/darkblue"
+            app:itemTextColor="@color/darkblue"
             app:menu="@menu/bottom_nav_menu" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -56,7 +58,8 @@
         app:itemMaxLines="2"
 
         app:itemTextAppearance="@style/DrawerText"
-        app:itemIconTint="@null"
+        app:itemTextColor="@color/darkblue"
+        app:itemIconTint="@color/darkblue"
         app:itemHorizontalPadding="24dp"
         app:itemVerticalPadding="12dp" />
 

@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white">
+    android:background="#E7F9FF">
 
     <!-- HEADER FISSO: titolo + X -->
     <LinearLayout
@@ -13,21 +13,22 @@
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:padding="16dp"
-        android:background="@android:color/white">
+        android:background="#E7F9FF">
 
         <TextView
             android:id="@+id/txtTitolo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textColor="@color/black"
             android:textSize="24sp"
             android:textStyle="bold"/>
 
         <!-- STELLINA -->
         <ImageButton
             android:id="@+id/btnPreferito"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:background="@null"
             android:src="@drawable/ic_star_outline"
             android:contentDescription="@string/preferito"/>
@@ -74,7 +75,7 @@
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:textAllCaps="true"
-                android:textColor="#87CEEB"
+                android:textColor="#0070A6"
                 android:paddingTop="12dp"
                 android:paddingBottom="2dp"/>
 
@@ -83,6 +84,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
+                android:textColor="@color/black"
                 android:textSize="16sp"/>
 
             <!-- GHIACCIAI -->
@@ -94,7 +96,7 @@
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:textAllCaps="true"
-                android:textColor="#87CEEB"
+                android:textColor="#0070A6"
                 android:paddingTop="8dp"
                 android:paddingBottom="2dp"/>
 
@@ -103,6 +105,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
+                android:textColor="@color/black"
                 android:textSize="16sp"/>
 
             <!-- BACINO IDROGRAFICO -->
@@ -114,7 +117,7 @@
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:textAllCaps="true"
-                android:textColor="#87CEEB"
+                android:textColor="#0070A6"
                 android:paddingTop="8dp"
                 android:paddingBottom="2dp"/>
 
@@ -123,6 +126,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
+                android:textColor="@color/black"
                 android:textSize="16sp"/>
 
             <!-- DESCRIZIONE -->
@@ -134,7 +138,7 @@
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:textAllCaps="true"
-                android:textColor="#87CEEB"
+                android:textColor="#0070A6"
                 android:paddingTop="16dp"
                 android:paddingBottom="3dp"/>
 
@@ -143,6 +147,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
+                android:textColor="@color/black"
                 android:textSize="16sp"/>
         </LinearLayout>
     </ScrollView>
