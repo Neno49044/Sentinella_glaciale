@@ -36,11 +36,11 @@ public class IntroActivity extends AppCompatActivity {
 
         // Create the fragments for the slides
         List<Fragment> fragments = new ArrayList<>();
-        fragments.add(IntroSlideFragment.newInstance(R.drawable.ic_sentinella, "Benvenuto in Sentinella Glaciale!", "Un’app per osservare, comprendere e proteggere i ghiacciai delle nostre montagne"));
-        fragments.add(IntroSlideFragment.newInstance(R.drawable.screen_mappa, "Esplora i ghiacciai sulla mappa", "Tocca un pin per scoprire lo stato di un ghiacciaio, la sua evoluzione nel tempo e le informazioni principali"));
-        fragments.add(IntroSlideFragment.newInstance(R.drawable.screen_ed, "Impara cosa sta succedendo ai ghiacciai", "Scopri le cause dello scioglimento, le conseguenze sul territorio e perché il cambiamento climatico ci riguarda tutti"));
-        fragments.add(IntroSlideFragment.newInstance(R.drawable.screen_quiz, "Mettiti alla prova!", "Quiz semplici e interattivi per imparare divertendosi, pensati anche per i più piccoli"));
-        fragments.add(IntroSlideFragment.newInstance(R.drawable.screen_ev, "Partecipa e fai la differenza", "Scopri eventi, incontri e iniziative per contribuire attivamente alla salvaguardia dei ghiacciai"));
+        fragments.add(IntroSlideFragment.newInstance(R.drawable.ic_sentinella, getString(R.string.benvenuto_in_sentinella_glaciale), getString(R.string.un_app_per_osservare_comprendere_e_proteggere_i_ghiacciai_delle_nostre_montagne)));
+        fragments.add(IntroSlideFragment.newInstance(R.drawable.screen_mappa, getString(R.string.esplora_i_ghiacciai_sulla_mappa), getString(R.string.tocca_un_pin_per_scoprire_lo_stato_di_un_ghiacciaio_la_sua_evoluzione_nel_tempo_e_le_informazioni_principali)));
+        fragments.add(IntroSlideFragment.newInstance(R.drawable.screen_ed, getString(R.string.impara_cosa_sta_succedendo_ai_ghiacciai), getString(R.string.scopri_le_cause_dello_scioglimento_le_conseguenze_sul_territorio_e_perch_il_cambiamento_climatico_ci_riguarda_tutti)));
+        fragments.add(IntroSlideFragment.newInstance(R.drawable.screen_quiz, getString(R.string.mettiti_alla_prova), getString(R.string.quiz_semplici_e_interattivi_per_imparare_divertendosi_pensati_anche_per_i_pi_piccoli)));
+        fragments.add(IntroSlideFragment.newInstance(R.drawable.screen_ev, getString(R.string.partecipa_e_fai_la_differenza), getString(R.string.scopri_eventi_incontri_e_iniziative_per_contribuire_attivamente_alla_salvaguardia_dei_ghiacciai)));
 
         adapter = new IntroAdapter(this, fragments);
         viewPager.setAdapter(adapter);
@@ -63,9 +63,9 @@ public class IntroActivity extends AppCompatActivity {
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
                 if (position == adapter.getItemCount() - 1) {
-                    nextButton.setText("FINE");
+                    nextButton.setText(R.string.fine);
                 } else {
-                    nextButton.setText("AVANTI");
+                    nextButton.setText(R.string.avanti2);
                 }
             }
         });

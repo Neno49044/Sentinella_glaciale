@@ -4,7 +4,8 @@
     android:padding="24dp"
     android:gravity="center_vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/lightblue">
 
     <ImageView
         android:layout_width="120dp"
@@ -19,7 +20,8 @@
         android:id="@+id/tvTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sentinella Galaciale"
+        android:text="@string/sentinella_galaciale"
+        android:textColor="@color/darkblue"
         android:textSize="24sp"
         android:textStyle="bold"
         android:textAlignment="center"
@@ -30,16 +32,16 @@
         android:id="@+id/tvSubtitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Accedi per continuare"
+        android:text="@string/accedi_per_continuare"
         android:textSize="16sp"
         android:textAlignment="center"
-        android:textColor="@android:color/darker_gray"
+        android:textColor="@color/darkblue"
         android:layout_marginBottom="32dp" />
 
 
     <EditText
         android:id="@+id/etEmail"
-        android:hint="Email"
+        android:hint="@string/email"
         android:textSize="16sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -48,7 +50,7 @@
 
     <EditText
         android:id="@+id/etPassword"
-        android:hint="Password"
+        android:hint="@string/password"
         android:inputType="textPassword"
         android:textSize="16sp"
         android:layout_width="match_parent"
@@ -59,9 +61,8 @@
 
     <Button
         android:id="@+id/btnLogin"
-        android:text="Login"
+        android:text="@string/login"
         android:textSize="16sp"
-        android:backgroundTint="@color/darkblue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp" />
@@ -71,9 +72,9 @@
         android:id="@+id/tvRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Non hai un account? Registrati"
+        android:text="@string/non_hai_un_account_registrati"
         android:textSize="16sp"
-        android:textColor="@android:color/holo_blue_dark"
+        android:textColor="@color/darkblue"
         android:layout_marginTop="16dp"
         android:layout_gravity="center_horizontal" />
 

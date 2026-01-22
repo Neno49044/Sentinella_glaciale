@@ -47,7 +47,7 @@ public class LoginActivity extends AppCompatActivity {
         String password = etPassword.getText().toString().trim();
 
         if (email.isEmpty() || password.isEmpty()) {
-            Toast.makeText(this, "Inserisci email e password", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.inserisci_email_e_password, Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -61,7 +61,7 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         } else {
-            Toast.makeText(this, "Email o password errate", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.email_o_password_errate, Toast.LENGTH_SHORT).show();
         }
 
     }

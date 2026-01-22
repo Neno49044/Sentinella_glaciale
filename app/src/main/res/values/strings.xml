@@ -244,4 +244,62 @@
         dei cambiamenti climatici, come documentato anche in filmati storici e attuali che mostrano
         la scomparsa del ghiacciaio pensile del Popera di 50 metri.\n
     </string>
+    <!-- intro,login,registrazione,eventi,menù laterale -->
+    <string name="salta">SALTA</string>
+    <string name="avanti">AVANTI</string>
+    <string name="sentinella_galaciale">Sentinella Galaciale</string>
+    <string name="accedi_per_continuare">Accedi per continuare</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="non_hai_un_account_registrati">Non hai un account? Registrati</string>
+    <string name="torna_indietro">Torna indietro</string>
+    <string name="crea_il_tuo_account">Crea il tuo account</string>
+    <string name="unisciti_a_sentinella_galaciale">Unisciti a Sentinella Galaciale</string>
+    <string name="scegli_la_tua_immagine_profilo">Scegli la tua immagine profilo</string>
+    <string name="email_reg">Email</string>
+    <string name="nome_utente">Nome utente</string>
+    <string name="password_reg">Password</string>
+    <string name="registrati">Registrati</string>
+    <string name="mario_rossi">Mario Rossi</string>
+    <string name="maggiori_informazioni">Maggiori informazioni</string>
+    <string name="giornata_mondiale_dei_ghiacciai">Giornata Mondiale dei Ghiacciai</string>
+    <string name="_21_marzo_2026">21 Marzo 2026</string>
+    <string name="eventi_organizzati_su_tutto_il_territorio_italiano">Eventi organizzati su tutto il territorio italiano</string>
+    <string name="proteggere_i_ghiacciai_una_responsabilit_di_tutti_agisci_ora">Proteggere i ghiacciai è una responsabilità di tutti. Agisci ora!</string>
+    <string name="_26_27_febbraio_2026">26-27 Febbraio 2026</string>
+    <string name="milano_italia">Milano, Italia</string>
+    <string name="un_incontro_internazionale_per_comprendere_le_profonde_trasformazioni_dei_ghiacciai_alpini_e_dei_territori_di_alta_montagna">Un incontro internazionale per comprendere le profonde trasformazioni dei ghiacciai alpini e dei territori di alta montagna.</string>
+    <string name="_29_alpine_glaciological_meeting_agm2026">29° Alpine Glaciological Meeting (AGM2026)</string>
+    <string name="descrizione_evento">Descrizione Evento:</string>
+    <string name="in_occasione_della_giornata_mondiale_dei_ghiacciai_sul_territorio_italiano_saranno_organizzate_numerose_attivit_tra_cui_laboratori_educativi_conferenze_e_soprattutto_passeggiate_sul_territorio_e_sui_ghiacciai_alpini">"In occasione della Giornata Mondiale dei Ghiacciai, sul territorio italiano saranno organizzate numerose attività, tra cui laboratori educativi, conferenze e soprattutto passeggiate sul territorio e sui ghiacciai alpini. "</string>
+    <string name="le_iniziative_saranno_promosse_da_diversi_enti_in_particolare_dal_club_alpino_italiano_cai_da_sempre_fortemente_presente_e_attivo_sul_territorio">"Le iniziative saranno promosse da diversi enti, in particolare dal Club Alpino Italiano (CAI), da sempre fortemente presente e attivo sul territorio. "</string>
+    <string name="per_rimanere_aggiornati_sulle_attivit_in_programma_possibile_consultare_la_pagina_dedicata_al_seguente_link">Per rimanere aggiornati sulle attività in programma, è possibile consultare la pagina dedicata al seguente link.</string>
+    <string name="il_29_incontro_di_glaciologia_alpina_in_programma_il_26_e_27_febbraio_2026_riunisce_la_comunit_glaciologica_alpina_per_promuovere_uno_scambio_scientifico_aperto_e_inclusivo">"Il 29ª Incontro di Glaciologia Alpina, in programma il 26 e 27 febbraio 2026, riunisce la comunità glaciologica alpina per promuovere uno scambio scientifico aperto e inclusivo. "</string>
+    <string name="l_incontro_si_concentra_sulle_rapide_trasformazioni_della_criosfera_alpina_e_sulle_loro_implicazioni_scientifiche_e_sociali_affrontando_temi_come_il_ritiro_dei_ghiacciai_i_rischi_glaciologici_emergenti_i_cambiamenti_idrologici_e_l_impatto_delle_attivit_umane_sugli_ambienti_montani">"L’incontro si concentra sulle rapide trasformazioni della criosfera alpina e sulle loro implicazioni scientifiche e sociali, affrontando temi come il ritiro dei ghiacciai, i rischi glaciologici emergenti, i cambiamenti idrologici e l’impatto delle attività umane sugli ambienti montani. "</string>
+    <string name="particolare_attenzione_dedicata_agli_approcci_interdisciplinari_e_al_coinvolgimento_dei_giovani_ricercatori_con_contributi_orali_e_poster">Particolare attenzione è dedicata agli approcci interdisciplinari e al coinvolgimento dei giovani ricercatori, con contributi orali e poster.</string>
+    <string name="descrizione_evento2">Descrizione Evento:</string>
+    <string name="apri_link">Apri link</string>
+    <string name="chiudi2">Chiudi</string>
+    <string name="benvenuto_in_sentinella_glaciale">Benvenuto in Sentinella Glaciale!</string>
+    <string name="esplora_i_ghiacciai_sulla_mappa">Esplora i ghiacciai sulla mappa</string>
+    <string name="impara_cosa_sta_succedendo_ai_ghiacciai">Impara cosa sta succedendo ai ghiacciai</string>
+    <string name="mettiti_alla_prova">Mettiti alla prova!</string>
+    <string name="partecipa_e_fai_la_differenza">Partecipa e fai la differenza</string>
+    <string name="un_app_per_osservare_comprendere_e_proteggere_i_ghiacciai_delle_nostre_montagne">Un’app per osservare, comprendere e proteggere i ghiacciai delle nostre montagne</string>
+    <string name="tocca_un_pin_per_scoprire_lo_stato_di_un_ghiacciaio_la_sua_evoluzione_nel_tempo_e_le_informazioni_principali">Tocca un pin per scoprire lo stato di un ghiacciaio, la sua evoluzione nel tempo e le informazioni principali</string>
+    <string name="scopri_le_cause_dello_scioglimento_le_conseguenze_sul_territorio_e_perch_il_cambiamento_climatico_ci_riguarda_tutti">Scopri le cause dello scioglimento, le conseguenze sul territorio e perché il cambiamento climatico ci riguarda tutti</string>
+    <string name="fine">FINE</string>
+    <string name="avanti2">AVANTI</string>
+    <string name="scopri_eventi_incontri_e_iniziative_per_contribuire_attivamente_alla_salvaguardia_dei_ghiacciai">Scopri eventi, incontri e iniziative per contribuire attivamente alla salvaguardia dei ghiacciai</string>
+    <string name="quiz_semplici_e_interattivi_per_imparare_divertendosi_pensati_anche_per_i_pi_piccoli">Quiz semplici e interattivi per imparare divertendosi, pensati anche per i più piccoli</string>
+    <string name="inserisci_email_e_password">Inserisci email e password</string>
+    <string name="email_o_password_errate">Email o password errate</string>
+    <string name="ghiacciaio_preferito">"Ghiacciaio preferito: "</string>
+    <string name="nessun_ghiacciaio_selezionato">Nessun ghiacciaio selezionato</string>
+    <string name="scegli_la_tua_immagine_profilo2">Scegli la tua immagine profilo</string>
+    <string name="scegli_un_immagine_profilo">Scegli un\'immagine profilo</string>
+    <string name="registrazione_completata">Registrazione completata</string>
+    <string name="email_gi_registrata">Email già registrata</string>
+    <string name="compila_tutti_i_campi">Compila tutti i campi</string>
 </resources>

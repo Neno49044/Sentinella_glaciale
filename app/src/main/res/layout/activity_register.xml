@@ -5,7 +5,8 @@
     android:gravity="center_vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:background="@color/lightblue">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,7 +20,7 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:src="@drawable/ic_arrow_back"
-            android:contentDescription="Torna indietro"
+            android:contentDescription="@string/torna_indietro"
             android:layout_gravity="start"
             android:clickable="true"
             android:focusable="true"
@@ -33,7 +34,8 @@
             android:id="@+id/tvTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Crea il tuo account"
+            android:text="@string/crea_il_tuo_account"
+            android:textColor="@color/darkblue"
             android:textStyle="bold"
             android:textSize="24sp"
             android:textAlignment="center"
@@ -44,7 +46,8 @@
             android:id="@+id/tvSubtitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Unisciti a Sentinella Galaciale"
+            android:text="@string/unisciti_a_sentinella_galaciale"
+            android:textColor="@color/darkblue"
             android:textSize="16sp"
             android:textAlignment="center"
             android:layout_marginBottom="24dp" />
@@ -73,8 +76,8 @@
                 android:id="@+id/tvChooseAvatar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Scegli la tua immagine profilo"
-                android:textColor="@android:color/darker_gray"
+                android:text="@string/scegli_la_tua_immagine_profilo"
+                android:textColor="@android:color/black"
                 android:textSize="16sp"
                 android:layout_marginTop="8dp" />
         </LinearLayout>
@@ -85,7 +88,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
-            android:hint="Email"
+            android:hint="@string/email_reg"
             android:inputType="textEmailAddress"
             android:textSize="16sp"
             android:layout_marginBottom="8dp" />
@@ -96,7 +99,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
-            android:hint="Nome utente"
+            android:hint="@string/nome_utente"
             android:textSize="16sp"
             android:layout_marginBottom="8dp" />
 
@@ -106,7 +109,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
-            android:hint="Password"
+            android:hint="@string/password_reg"
             android:inputType="textPassword"
             android:textSize="16sp" />
 
@@ -115,7 +118,7 @@
             android:id="@+id/btnRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Registrati"
+            android:text="@string/registrati"
             android:textSize="16sp"
             android:layout_marginTop="16dp" />
 

@@ -172,9 +172,9 @@ public class MainActivity extends AppCompatActivity {
 
         if (favoriteItem != null) {
             if (preferito != null) {
-                favoriteItem.setTitle("Ghiacciaio preferito");
+                favoriteItem.setTitle(getString(R.string.ghiacciaio_preferito) + preferito.getNome());
             } else {
-                favoriteItem.setTitle("Nessun ghiacciaio selezionato");
+                favoriteItem.setTitle(R.string.nessun_ghiacciaio_selezionato);
             }
         }
     }

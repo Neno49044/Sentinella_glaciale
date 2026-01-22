@@ -13,6 +13,22 @@
 
         <!-- Stile globale per i bottoni -->
         <item name="materialButtonStyle">@style/App.Button</item>
+
+        <item name="toolbarStyle">@style/Widget.App.Toolbar</item>
+        <item name="drawerArrowStyle">@style/Widget.App.DrawerArrowStyle</item>
+
+    </style>
+
+    <style name="Widget.App.Toolbar" parent="Widget.MaterialComponents.Toolbar.Primary">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Toolbar</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Toolbar" parent="">
+        <item name="colorOnPrimary">@android:color/white</item>
+    </style>
+
+    <style name="Widget.App.DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">@android:color/white</item>
     </style>
 
     <!-- Stile per i bottoni con angoli smussati -->

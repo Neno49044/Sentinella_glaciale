@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:padding="16dp"
-    android:background="@color/darkblue">
+    android:background="?attr/colorPrimary">
 
     <ImageView
         android:id="@+id/imgProfile"
@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:text="Mario Rossi"
+        android:text="@string/mario_rossi"
         android:textSize="18sp"
         android:textStyle="bold"
         android:textColor="@android:color/white" />

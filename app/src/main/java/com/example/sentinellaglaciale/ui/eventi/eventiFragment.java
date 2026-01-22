@@ -40,16 +40,16 @@ public class eventiFragment extends Fragment {
     private void setupEvent1() {
         EventItemBinding event1Binding = EventItemBinding.bind(binding.getRoot().findViewById(R.id.event_1));
         event1Binding.eventImage.setImageResource(R.drawable.ev1);
-        event1Binding.eventTitle.setText("Giornata Mondiale dei Ghiacciai");
-        event1Binding.eventDate.setText("21 Marzo 2026");
-        event1Binding.eventLocation.setText("Eventi organizzati su tutto il territorio italiano");
-        event1Binding.eventDescription.setText("Proteggere i ghiacciai è una responsabilità di tutti. Agisci ora!");
+        event1Binding.eventTitle.setText(R.string.giornata_mondiale_dei_ghiacciai);
+        event1Binding.eventDate.setText(R.string._21_marzo_2026);
+        event1Binding.eventLocation.setText(R.string.eventi_organizzati_su_tutto_il_territorio_italiano);
+        event1Binding.eventDescription.setText(R.string.proteggere_i_ghiacciai_una_responsabilit_di_tutti_agisci_ora);
         event1Binding.participateButton.setOnClickListener(v -> {
             showEventDialog(
-                    "Descrizione Evento:",
-                    "In occasione della Giornata Mondiale dei Ghiacciai, sul territorio italiano saranno organizzate numerose attività, tra cui laboratori educativi, conferenze e soprattutto passeggiate sul territorio e sui ghiacciai alpini. " +
-                            "Le iniziative saranno promosse da diversi enti, in particolare dal Club Alpino Italiano (CAI), da sempre fortemente presente e attivo sul territorio. " +
-                            "Per rimanere aggiornati sulle attività in programma, è possibile consultare la pagina dedicata al seguente link.",
+                    getString(R.string.descrizione_evento),
+                    getString(R.string.in_occasione_della_giornata_mondiale_dei_ghiacciai_sul_territorio_italiano_saranno_organizzate_numerose_attivit_tra_cui_laboratori_educativi_conferenze_e_soprattutto_passeggiate_sul_territorio_e_sui_ghiacciai_alpini) +
+                            getString(R.string.le_iniziative_saranno_promosse_da_diversi_enti_in_particolare_dal_club_alpino_italiano_cai_da_sempre_fortemente_presente_e_attivo_sul_territorio) +
+                            getString(R.string.per_rimanere_aggiornati_sulle_attivit_in_programma_possibile_consultare_la_pagina_dedicata_al_seguente_link),
                     "https://caiscuola.cai.it/eventi/giornata-mondiale-dei-ghiacciai-sabato-21-marzo-2026/"
             );
         });
@@ -58,16 +58,16 @@ public class eventiFragment extends Fragment {
     private void setupEvent2() {
         EventItemBinding event2Binding = EventItemBinding.bind(binding.getRoot().findViewById(R.id.event_2));
         event2Binding.eventImage.setImageResource(R.drawable.ev2);
-        event2Binding.eventTitle.setText("29° Alpine Glaciological Meeting (AGM2026)");
-        event2Binding.eventDate.setText("26-27 Febbraio 2026");
-        event2Binding.eventLocation.setText("Milano, Italia");
-        event2Binding.eventDescription.setText("Un incontro internazionale per comprendere le profonde trasformazioni dei ghiacciai alpini e dei territori di alta montagna.");
+        event2Binding.eventTitle.setText(R.string._29_alpine_glaciological_meeting_agm2026);
+        event2Binding.eventDate.setText(R.string._26_27_febbraio_2026);
+        event2Binding.eventLocation.setText(R.string.milano_italia);
+        event2Binding.eventDescription.setText(R.string.un_incontro_internazionale_per_comprendere_le_profonde_trasformazioni_dei_ghiacciai_alpini_e_dei_territori_di_alta_montagna);
         event2Binding.participateButton.setOnClickListener(v -> {
             showEventDialog(
-                    "Descrizione Evento:",
-                    "Il 29ª Incontro di Glaciologia Alpina, in programma il 26 e 27 febbraio 2026, riunisce la comunità glaciologica alpina per promuovere uno scambio scientifico aperto e inclusivo. " +
-                            "L’incontro si concentra sulle rapide trasformazioni della criosfera alpina e sulle loro implicazioni scientifiche e sociali, affrontando temi come il ritiro dei ghiacciai, i rischi glaciologici emergenti, i cambiamenti idrologici e l’impatto delle attività umane sugli ambienti montani. " +
-                            "Particolare attenzione è dedicata agli approcci interdisciplinari e al coinvolgimento dei giovani ricercatori, con contributi orali e poster." + "Per iscriversi a questo evento andare alla pagina web attraverso il link.",
+                    getString(R.string.descrizione_evento2),
+                    getString(R.string.il_29_incontro_di_glaciologia_alpina_in_programma_il_26_e_27_febbraio_2026_riunisce_la_comunit_glaciologica_alpina_per_promuovere_uno_scambio_scientifico_aperto_e_inclusivo) +
+                            getString(R.string.l_incontro_si_concentra_sulle_rapide_trasformazioni_della_criosfera_alpina_e_sulle_loro_implicazioni_scientifiche_e_sociali_affrontando_temi_come_il_ritiro_dei_ghiacciai_i_rischi_glaciologici_emergenti_i_cambiamenti_idrologici_e_l_impatto_delle_attivit_umane_sugli_ambienti_montani) +
+                            getString(R.string.particolare_attenzione_dedicata_agli_approcci_interdisciplinari_e_al_coinvolgimento_dei_giovani_ricercatori_con_contributi_orali_e_poster) + "Per iscriversi a questo evento andare alla pagina web attraverso il link.",
                     "https://sites.google.com/unimib.it/eurocold/agm-29th-2026"
             );
         });
@@ -77,11 +77,11 @@ public class eventiFragment extends Fragment {
         new AlertDialog.Builder(requireContext())
                 .setTitle(title)
                 .setMessage(message)
-                .setPositiveButton("Apri link", (dialog, which) -> {
+                .setPositiveButton(R.string.apri_link, (dialog, which) -> {
                     Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
                     startActivity(browserIntent);
                 })
-                .setNegativeButton("Chiudi", null)
+                .setNegativeButton(R.string.chiudi2, null)
                 .show();
     }
 

@@ -55,7 +55,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void showAvatarSelection() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Scegli la tua immagine profilo");
+        builder.setTitle(R.string.scegli_la_tua_immagine_profilo2);
 
         LayoutInflater inflater = getLayoutInflater();
         View dialogView = inflater.inflate(R.layout.dialog_avatar_grid, null);
@@ -115,12 +115,12 @@ public class RegisterActivity extends AppCompatActivity {
         String password = etPassword.getText().toString().trim();
 
         if (email.isEmpty() || username.isEmpty() || password.isEmpty()) {
-            Toast.makeText(this, "Compila tutti i campi", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.compila_tutti_i_campi, Toast.LENGTH_SHORT).show();
             return;
         }
 
         if (selectedAvatarResId == -1) {
-            Toast.makeText(this, "Scegli un'immagine profilo", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.scegli_un_immagine_profilo, Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -130,10 +130,10 @@ public class RegisterActivity extends AppCompatActivity {
         boolean success = userDao.registerUser(email, username, password, avatarName);
 
         if (success) {
-            Toast.makeText(this, "Registrazione completata", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.registrazione_completata, Toast.LENGTH_SHORT).show();
             finish();
         } else {
-            Toast.makeText(this, "Email già registrata", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.email_gi_registrata, Toast.LENGTH_SHORT).show();
         }
     }
 
