@@ -90,6 +90,18 @@
     <string name="opzione63">I ritmi stagionali sono alterati</string>
     <string name="opzione64">Gli habitat diventano più vari</string>
     <string name="soluzione6">La soluzione corretta è la numero 4: Gli habitat diventano più vari.</string>
+    <string name="domanda7">7) Quale fra le seguenti non è un\'attività che provoca un grosso aumento di gas ad effetto serra?</string>
+    <string name="opzione71">Produzione di energia idroelettrica</string>
+    <string name="opzione72">Industria</string>
+    <string name="opzione73">Aumento della deforestazione</string>
+    <string name="opzione74">Combustione di combustibili fossili</string>
+    <string name="soluzione7">La soluzione corretta è la numero 1: Produzioned di energia idroelettrica.</string>
+    <string name="domanda8">8) Quale di queste non è una conseguenza a livello di rischi naturali dello scioglimento dei ghiacciai?</string>
+    <string name="opzione81">Aumento del rischio di frane</string>
+    <string name="opzione82">Riduzioine dei periodi di siccità</string>
+    <string name="opzione83">Rottura delle dighe naturali</string>
+    <string name="opzione84">Formazione di laghi ghiacciati instabili</string>
+    <string name="soluzione8">La soluzione corretta è la numero 2: Riduzioine dei periodi di siccità.</string>
     <string name="button_soluzione">Invia le risposte</string>
     <string name="button_finequiz">Torna indietro</string>
 

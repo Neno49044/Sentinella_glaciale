@@ -328,6 +328,106 @@
             android:visibility="gone"
             />
 
+        <TextView
+            android:id="@+id/text_domanda7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textSize="18sp"
+            android:textColor="@color/darkblue"
+            android:text="@string/domanda7"/>
+        <RadioGroup
+            android:id="@+id/domanda7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <RadioButton android:id="@+id/rb_opzione71" android:text="@string/opzione71"
+                android:button="@null"
+                android:drawableStart="@drawable/quiz_bullet_giusto"
+                android:drawablePadding="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <RadioButton android:id="@+id/rb_opzione72" android:text="@string/opzione72"
+                android:button="@null"
+                android:drawableStart="@drawable/quiz_bullet"
+                android:drawablePadding="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <RadioButton android:id="@+id/rb_opzione73" android:text="@string/opzione73"
+                android:button="@null"
+                android:drawableStart="@drawable/quiz_bullet"
+                android:drawablePadding="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <RadioButton android:id="@+id/rb_opzione74" android:text="@string/opzione74"
+                android:button="@null"
+                android:drawableStart="@drawable/quiz_bullet"
+                android:drawablePadding="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </RadioGroup>
+        <TextView
+            android:id="@+id/sol_domanda7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="18sp"
+            android:text="@string/soluzione7"
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:id="@+id/text_domanda8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textSize="18sp"
+            android:textColor="@color/darkblue"
+            android:text="@string/domanda8"/>
+        <RadioGroup
+            android:id="@+id/domanda8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <RadioButton android:id="@+id/rb_opzione81" android:text="@string/opzione81"
+                android:button="@null"
+                android:drawableStart="@drawable/quiz_bullet"
+                android:drawablePadding="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <RadioButton android:id="@+id/rb_opzione82" android:text="@string/opzione82"
+                android:button="@null"
+                android:drawableStart="@drawable/quiz_bullet_giusto"
+                android:drawablePadding="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <RadioButton android:id="@+id/rb_opzione83" android:text="@string/opzione83"
+                android:button="@null"
+                android:drawableStart="@drawable/quiz_bullet"
+                android:drawablePadding="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <RadioButton android:id="@+id/rb_opzione84" android:text="@string/opzione84"
+                android:button="@null"
+                android:drawableStart="@drawable/quiz_bullet"
+                android:drawablePadding="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </RadioGroup>
+        <TextView
+            android:id="@+id/sol_domanda8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="18sp"
+            android:text="@string/soluzione8"
+            android:visibility="gone"
+            />
+
         <Button
             android:id="@+id/button_soluzione"
             android:layout_width="wrap_content"

@@ -3,6 +3,7 @@ package com.example.sentinellaglaciale.ui.educazione;
 import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.res.ColorStateList;
@@ -102,6 +103,24 @@ public class QuizFragment extends Fragment {
                 }else{
                     binding.solDomanda6.setTextColor(Color.parseColor("#FF0000"));
                 }
+                binding.rbOpzione71.setEnabled(false);
+                binding.rbOpzione72.setEnabled(false);
+                binding.rbOpzione73.setEnabled(false);
+                binding.rbOpzione74.setEnabled(false);
+                if(binding.rbOpzione71.isChecked()){
+                    binding.solDomanda7.setTextColor(Color.parseColor("#008000"));
+                }else{
+                    binding.solDomanda7.setTextColor(Color.parseColor("#FF0000"));
+                }
+                binding.rbOpzione81.setEnabled(false);
+                binding.rbOpzione82.setEnabled(false);
+                binding.rbOpzione83.setEnabled(false);
+                binding.rbOpzione84.setEnabled(false);
+                if(binding.rbOpzione82.isChecked()){
+                    binding.solDomanda8.setTextColor(Color.parseColor("#008000"));
+                }else{
+                    binding.solDomanda8.setTextColor(Color.parseColor("#FF0000"));
+                }
                 binding.buttonSoluzione.setVisibility(GONE);
                 binding.buttonQuizcompleto.setVisibility(VISIBLE);
                 binding.solDomanda1.setVisibility(VISIBLE);
@@ -110,6 +129,8 @@ public class QuizFragment extends Fragment {
                 binding.solDomanda4.setVisibility(VISIBLE);
                 binding.solDomanda5.setVisibility(VISIBLE);
                 binding.solDomanda6.setVisibility(VISIBLE);
+                binding.solDomanda7.setVisibility(VISIBLE);
+                binding.solDomanda8.setVisibility(VISIBLE);
             });
 
         binding.buttonQuizcompleto.setOnClickListener(v ->
@@ -121,6 +142,14 @@ public class QuizFragment extends Fragment {
         return root;
             //return inflater.inflate(R.layout.fragment_quiz, container, false);
 
+    }
+
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        if (getActivity() instanceof AppCompatActivity) {
+            ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+            ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayShowHomeEnabled(false);
+        }
     }
 
 }
