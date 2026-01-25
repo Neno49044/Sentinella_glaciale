@@ -1,6 +1,7 @@
 package com.example.sentinellaglaciale.ui.intro;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 
@@ -27,6 +28,15 @@ public class IntroActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Check if the intro has been seen before
+        SharedPreferences prefs = getSharedPreferences("MyAppPrefs", MODE_PRIVATE);
+        if (prefs.getBoolean("intro_seen", false)) {
+            startActivity(new Intent(this, LoginActivity.class));
+            finish();
+            return; // Skip the rest of the method
+        }
+
         setContentView(R.layout.activity_intro);
 
         viewPager = findViewById(R.id.view_pager);
@@ -41,7 +51,6 @@ public class IntroActivity extends AppCompatActivity {
         fragments.add(IntroSlideFragment.newInstance(R.drawable.screen_ed, getString(R.string.impara_cosa_sta_succedendo_ai_ghiacciai), getString(R.string.scopri_le_cause_dello_scioglimento_le_conseguenze_sul_territorio_e_perch_il_cambiamento_climatico_ci_riguarda_tutti)));
         fragments.add(IntroSlideFragment.newInstance(R.drawable.screen_quiz, getString(R.string.mettiti_alla_prova), getString(R.string.quiz_semplici_e_interattivi_per_imparare_divertendosi_pensati_anche_per_i_pi_piccoli)));
         fragments.add(IntroSlideFragment.newInstance(R.drawable.screen_ev, getString(R.string.partecipa_e_fai_la_differenza), getString(R.string.scopri_eventi_incontri_e_iniziative_per_contribuire_attivamente_alla_salvaguardia_dei_ghiacciai)));
-
         adapter = new IntroAdapter(this, fragments);
         viewPager.setAdapter(adapter);
 
@@ -72,6 +81,12 @@ public class IntroActivity extends AppCompatActivity {
     }
 
     private void finishIntro() {
+        // Set the flag to true so the intro is not shown again
+        SharedPreferences prefs = getSharedPreferences("MyAppPrefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putBoolean("intro_seen", true);
+        editor.apply();
+
         startActivity(new Intent(this, LoginActivity.class));
         finish();
     }

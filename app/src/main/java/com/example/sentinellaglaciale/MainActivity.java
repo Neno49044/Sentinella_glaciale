@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     private NavigationView navigationView;
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
     private final Handler handler = new Handler(Looper.getMainLooper());
+    private NavController navController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
                 .setOpenableLayout(drawerLayout)
                 .build();
 
-        NavController navController = Navigation.findNavController(
+        navController = Navigation.findNavController(
                 this,
                 R.id.nav_host_fragment_activity_main
         );
@@ -102,20 +103,18 @@ public class MainActivity extends AppCompatActivity {
                 finish();
                 return true;
             } else if (itemId == R.id.nav_favorite) {
-                Ghiacciaio preferito = GhiacciaioRepository.getInstance().getPreferito();
-                if (preferito != null) {
-                    Bundle args = new Bundle();
-                    args.putSerializable("ghiacciaio", preferito);
-                    DettagliGhiacciaioFragment fragment = new DettagliGhiacciaioFragment();
-                    fragment.setArguments(args);
-
-                    getSupportFragmentManager()
-                            .beginTransaction()
-                            .replace(R.id.nav_host_fragment_activity_main, fragment)
-                            .addToBackStack(null)
-                            .commit();
-                }
-                drawerLayout.closeDrawers();
+                // Spostiamo la logica in un thread separato per non bloccare l'UI
+                executor.execute(() -> {
+                    Ghiacciaio preferito = GhiacciaioRepository.getInstance().getPreferito();
+                    handler.post(() -> {
+                        if (preferito != null) {
+                            Bundle args = new Bundle();
+                            args.putSerializable("ghiacciaio", preferito);
+                            navController.navigate(R.id.navigation_dettagli, args);
+                        }
+                        drawerLayout.closeDrawers();
+                    });
+                });
                 return true;
             }
             return false;
@@ -166,17 +165,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateFavoriteGlacierInMenu() {
-        Ghiacciaio preferito = GhiacciaioRepository.getInstance().getPreferito();
-        Menu menu = navigationView.getMenu();
-        MenuItem favoriteItem = menu.findItem(R.id.nav_favorite);
+        executor.execute(() -> {
+            // Esegui l'operazione di I/O in background
+            Ghiacciaio preferito = GhiacciaioRepository.getInstance().getPreferito();
 
-        if (favoriteItem != null) {
-            if (preferito != null) {
-                favoriteItem.setTitle(getString(R.string.ghiacciaio_preferito) + preferito.getNome());
-            } else {
-                favoriteItem.setTitle(R.string.nessun_ghiacciaio_selezionato);
-            }
-        }
+            // Aggiorna l'interfaccia utente sul thread principale
+            handler.post(() -> {
+                Menu menu = navigationView.getMenu();
+                MenuItem favoriteItem = menu.findItem(R.id.nav_favorite);
+
+                if (favoriteItem != null) {
+                    if (preferito != null) {
+                        favoriteItem.setTitle(getString(R.string.ghiacciaio_preferito) + preferito.getNome());
+                    } else {
+                        favoriteItem.setTitle(R.string.nessun_ghiacciaio_selezionato);
+                    }
+                }
+            });
+        });
     }
 
     @Override

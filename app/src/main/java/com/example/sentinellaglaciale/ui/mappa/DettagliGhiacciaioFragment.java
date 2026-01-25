@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import com.example.sentinellaglaciale.R;
 import com.example.sentinellaglaciale.databinding.FragmentDettagliGhiacciaioBinding;
@@ -32,7 +33,7 @@ public class DettagliGhiacciaioFragment extends Fragment {
 
         // Bottone chiusura
         binding.btnClose.setOnClickListener(v ->
-                androidx.navigation.Navigation.findNavController(v).popBackStack()
+                Navigation.findNavController(v).navigateUp()
         );
 
         // Recupero il ghiacciaio reale dalla lista Repository tramite l'oggetto passato
