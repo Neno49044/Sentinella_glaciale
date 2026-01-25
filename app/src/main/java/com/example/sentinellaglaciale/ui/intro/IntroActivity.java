@@ -22,7 +22,6 @@ public class IntroActivity extends AppCompatActivity {
     private ViewPager2 viewPager;
     private IntroAdapter adapter;
     private TabLayout tabLayout;
-    private Button skipButton;
     private Button nextButton;
 
     @Override
@@ -41,7 +40,6 @@ public class IntroActivity extends AppCompatActivity {
 
         viewPager = findViewById(R.id.view_pager);
         tabLayout = findViewById(R.id.tab_layout);
-        skipButton = findViewById(R.id.button_skip);
         nextButton = findViewById(R.id.button_next);
 
         // Create the fragments for the slides
@@ -57,8 +55,7 @@ public class IntroActivity extends AppCompatActivity {
         // Collega i pallini al ViewPager
         new TabLayoutMediator(tabLayout, viewPager, (tab, position) -> {}).attach();
 
-        // Gestione bottoni
-        skipButton.setOnClickListener(v -> finishIntro());
+        // Gestione bottone AVANTI
         nextButton.setOnClickListener(v -> {
             if (viewPager.getCurrentItem() < adapter.getItemCount() - 1) {
                 viewPager.setCurrentItem(viewPager.getCurrentItem() + 1);

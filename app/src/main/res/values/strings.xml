@@ -314,4 +314,9 @@
     <string name="registrazione_completata">Registrazione completata</string>
     <string name="email_gi_registrata">Email già registrata</string>
     <string name="compila_tutti_i_campi">Compila tutti i campi</string>
+    <string name="informativa_sulla_privacy">Informativa sulla Privacy</string>
+    <string name="ho_letto_e_accetto_l_informativa_sulla_privacy">Ho letto e accetto l\'informativa sulla privacy</string>
+    <string name="accetta_e_continua">Accetta e continua</string>
+    <string name="rifiuta_e_esci">Rifiuta e esci</string>
+    <string name="per_utilizzare_sentinella_glaciale_necessario_creare_un_account_n_ni_dati_che_raccogliamo_n_8226_indirizzo_email_e_username_per_identificarti_e_permetterti_di_accedere_n_8226_ghiacciaio_preferito_per_personalizzare_la_tua_esperienza_nell_app_n_nquesti_dati_vengono_salvati_in_modo_sicuro_sul_dispositivo_e_non_vengono_condivisi_con_terze_parti_n_ncontinuando_accetti_la_nostra_gestione_dei_dati_come_descritto_per_maggiori_dettagli_puoi_consultare_il_regolamento_completo_del_gdpr">Per utilizzare Sentinella Glaciale è necessario creare un account.\n\nI dati che raccogliamo:\n• Indirizzo email e username: per identificarti e permetterti di accedere.\n• Ghiacciaio preferito: per personalizzare la tua esperienza nell\'app.\n\nQuesti dati vengono salvati in modo sicuro sul dispositivo e non vengono condivisi con terze parti.\n\nContinuando, accetti la nostra gestione dei dati come descritto. Per maggiori dettagli, puoi consultare il regolamento completo del GDPR.</string>
 </resources>

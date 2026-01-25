@@ -40,8 +40,6 @@ public class QuizFragment extends Fragment {
             final TextView textView = binding.textQuiz;
             QuizViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
 
-            View view = inflater.inflate(R.layout.fragment_quiz, container, false);
-
             binding.rbOpzione11.setButtonTintList(null);
             binding.rbOpzione12.setButtonTintList(null);
             binding.rbOpzione13.setButtonTintList(null);
@@ -138,18 +136,8 @@ public class QuizFragment extends Fragment {
                         .navigate(R.id.action_QuizFragment_to_educazioneFragment)
         );
 
-
         return root;
-            //return inflater.inflate(R.layout.fragment_quiz, container, false);
-
     }
 
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        if (getActivity() instanceof AppCompatActivity) {
-            ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-            ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayShowHomeEnabled(false);
-        }
-    }
-
+   
 }

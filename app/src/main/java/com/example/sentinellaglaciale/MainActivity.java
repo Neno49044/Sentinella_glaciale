@@ -12,7 +12,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
@@ -25,7 +24,6 @@ import com.example.sentinellaglaciale.database.UserDao;
 import com.example.sentinellaglaciale.databinding.ActivityMainBinding;
 import com.example.sentinellaglaciale.ui.Ghiacciaio;
 import com.example.sentinellaglaciale.ui.GhiacciaioRepository;
-import com.example.sentinellaglaciale.ui.mappa.DettagliGhiacciaioFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
@@ -40,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
     private final Handler handler = new Handler(Looper.getMainLooper());
     private NavController navController;
+    private AppBarConfiguration appBarConfiguration;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,26 +55,20 @@ public class MainActivity extends AppCompatActivity {
         navigationView.setItemIconTintList(null);
         navigationView.setItemTextColor(null);
 
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this,
-                drawerLayout,
-                binding.toolbar,
-                R.string.navigation_drawer_open,
-                R.string.navigation_drawer_close
-        ) {
+        drawerLayout.addDrawerListener(new DrawerLayout.SimpleDrawerListener() {
             @Override
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
                 updateFavoriteGlacierInMenu();
             }
-        };
-        drawerLayout.addDrawerListener(toggle);
-        toggle.syncState();
+        });
 
         BottomNavigationView navView = binding.navView;
         navView.setItemIconTintList(null);
 
-        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
+        // Rimuoviamo il QuizFragment dalle destinazioni di primo livello
+        // In questo modo, mostrerà la freccia "Indietro" invece del menu
+        appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_educazione,
                 R.id.navigation_mappa,
                 R.id.navigation_eventi
@@ -103,7 +96,6 @@ public class MainActivity extends AppCompatActivity {
                 finish();
                 return true;
             } else if (itemId == R.id.nav_favorite) {
-                // Spostiamo la logica in un thread separato per non bloccare l'UI
                 executor.execute(() -> {
                     Ghiacciaio preferito = GhiacciaioRepository.getInstance().getPreferito();
                     handler.post(() -> {
@@ -136,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
                     if (user != null) {
                         updateNavHeader(user);
                         updateNavMenu(user);
-                        updateFavoriteGlacierInMenu(); // Also update on initial load
+                        updateFavoriteGlacierInMenu();
                     }
                 });
             });
@@ -166,10 +158,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void updateFavoriteGlacierInMenu() {
         executor.execute(() -> {
-            // Esegui l'operazione di I/O in background
             Ghiacciaio preferito = GhiacciaioRepository.getInstance().getPreferito();
-
-            // Aggiorna l'interfaccia utente sul thread principale
             handler.post(() -> {
                 Menu menu = navigationView.getMenu();
                 MenuItem favoriteItem = menu.findItem(R.id.nav_favorite);
@@ -187,13 +176,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(
-                this,
-                R.id.nav_host_fragment_activity_main
-        );
-        return NavigationUI.navigateUp(
-                navController,
-                drawerLayout
-        ) || super.onSupportNavigateUp();
+        return NavigationUI.navigateUp(navController, appBarConfiguration)
+                || super.onSupportNavigateUp();
     }
 }

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/privacy_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/informativa_sulla_privacy"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/privacy_title"
+        app:layout_constraintBottom_toTopOf="@+id/checkbox_accept"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/privacy_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="@string/per_utilizzare_sentinella_glaciale_necessario_creare_un_account_n_ni_dati_che_raccogliamo_n_8226_indirizzo_email_e_username_per_identificarti_e_permetterti_di_accedere_n_8226_ghiacciaio_preferito_per_personalizzare_la_tua_esperienza_nell_app_n_nquesti_dati_vengono_salvati_in_modo_sicuro_sul_dispositivo_e_non_vengono_condivisi_con_terze_parti_n_ncontinuando_accetti_la_nostra_gestione_dei_dati_come_descritto_per_maggiori_dettagli_puoi_consultare_il_regolamento_completo_del_gdpr" />
+
+    </ScrollView>
+
+    <CheckBox
+        android:id="@+id/checkbox_accept"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/ho_letto_e_accetto_l_informativa_sulla_privacy"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/button_accept"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/button_accept"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/accetta_e_continua"
+        android:enabled="false"
+        app:layout_constraintBottom_toTopOf="@+id/button_decline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/button_decline"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/rifiuta_e_esci"
+        android:textColor="@android:color/darker_gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,13 +16,17 @@
         android:theme="@style/Theme.SentinellaGlaciale">
 
         <activity
-            android:name=".ui.intro.IntroActivity"
+            android:name=".PrivacyPolicyActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".ui.intro.IntroActivity"
+            android:exported="false" />
 
         <activity
             android:name=".RegisterActivity"
