@@ -45,6 +45,10 @@
         android:id="@+id/navigation_dettagli"
         android:name="com.example.sentinellaglaciale.ui.mappa.DettagliGhiacciaioFragment"
         android:label="@string/title_dettagli_ghiacciaio"
-        tools:layout="@layout/fragment_dettagli_ghiacciaio" />
+        tools:layout="@layout/fragment_dettagli_ghiacciaio">
+        <action
+            android:id="@+id/action_dettagliFragment_to_mappaFragment"
+            app:destination="@id/navigation_mappa" />
+    </fragment>
 
 </navigation>

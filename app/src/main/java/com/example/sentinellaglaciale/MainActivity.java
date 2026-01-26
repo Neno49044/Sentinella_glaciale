@@ -11,7 +11,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
@@ -54,21 +53,13 @@ public class MainActivity extends BaseActivity {
         navigationView.setItemIconTintList(null);
         navigationView.setItemTextColor(null);
 
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this,
-                drawerLayout,
-                binding.toolbar,
-                R.string.navigation_drawer_open,
-                R.string.navigation_drawer_close
-        ) {
+        drawerLayout.addDrawerListener(new DrawerLayout.SimpleDrawerListener() {
             @Override
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
                 updateFavoriteGlacierInMenu();
             }
-        };
-        drawerLayout.addDrawerListener(toggle);
-        toggle.syncState();
+        });
 
         BottomNavigationView navView = binding.navView;
         navView.setItemIconTintList(null);
@@ -76,7 +67,9 @@ public class MainActivity extends BaseActivity {
         appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_educazione,
                 R.id.navigation_mappa,
-                R.id.navigation_eventi
+                R.id.navigation_eventi,
+                R.id.navigation_Quiz,
+                R.id.navigation_dettagli
         )
                 .setOpenableLayout(drawerLayout)
                 .build();
