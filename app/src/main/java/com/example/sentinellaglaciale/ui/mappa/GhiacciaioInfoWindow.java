@@ -41,16 +41,6 @@ public class GhiacciaioInfoWindow extends MarkerInfoWindow{
             Bundle bundle = new Bundle();
             bundle.putSerializable("ghiacciaio", g);
 
-            /*fragment.setArguments(bundle);
-            activity.getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(
-                            R.id.nav_host_fragment_activity_main,
-                            fragment
-                    )
-                    .addToBackStack(null)
-                    .commit();*/
-
             //per chiudere bene scheda ghiacciaio anche senza x
             androidx.navigation.Navigation.findNavController(activity, R.id.nav_host_fragment_activity_main)
                     .navigate(R.id.navigation_dettagli, bundle);

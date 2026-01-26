@@ -9,11 +9,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
 import com.example.sentinellaglaciale.database.UserDao;
 
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends BaseActivity {
 
     EditText etEmail, etPassword;
     Button btnLogin;
@@ -65,8 +64,4 @@ public class LoginActivity extends AppCompatActivity {
         }
 
     }
-
-
-
-
 }

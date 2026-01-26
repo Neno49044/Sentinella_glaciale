@@ -8,7 +8,13 @@
     <string name="navigation_drawer_close">Chiudi menu di navigazione</string>
 
 
+
     <!--Stringhe utili per la sezione educazione-->
+
+    <string name="intro_quiz">Benvenuto al quiz!</string>
+    <string name="intro_edu">Benvenuto in sentinella glaciale! In questa sezione potrai
+        imparare alcune informazioni sui principali ghiacciai dolomitici e metterti alla
+        prova con un divertente quiz!</string>
     <string name="button_quiz">Mettiti alla prova!</string>
     <string name="titolo_edu1">INTRODUZIONE</string>
     <string name="info_generali1">I ghiacciai alpini sono tra i più grandi e studiati complessi
@@ -35,7 +41,7 @@
         che scuriscono la superficie favorendo l’assorbimento di calore.
     </string>
     <string name="titolo_edu4">CONSEGUENZE</string>
-    <string name="info_generali4">Poi metterò un elenco puntato</string>
+    <string name="info_generali4">Ecco alcune delle conseguenze principali:</string>
     <string name="info_generali4_bullet1">Risorse idriche: i ghiacciai alpini fungono da serbatoi
         naturali di acqua dolce: rilasciano acqua gradualmente durante l’estate, alimentando fiumi
         e bacini idrici. Il loro ritiro riduce questa riserva, con impatti su acqua potabile,
@@ -105,6 +111,11 @@
     <string name="button_soluzione">Invia le risposte</string>
     <string name="button_finequiz">Torna indietro</string>
 
+    <!-- Stringhe per il cambio lingua -->
+    <string name="cambia_lingua">Cambia lingua</string>
+    <string name="scegli_lingua">Scegli la lingua:</string>
+    <string name="italiano">Italiano</string>
+    <string name="inglese">Inglese</string>
 
     <!--Stringhe utili per la parte dei ghiacciai-->
     <string name="chiudi">Chiudi</string>
@@ -118,7 +129,7 @@
     <string name="cambia_preferito">Cambia ghiacciaio preferito</string>
     <string name="si">Sì</string>
     <string name="no">No</string>
-    <string name="preferito_gia_presente">Hai già un ghiacciaio preferito (%1$s). Vuoi cambiarlo?</string>
+    <string name="preferito_gia_presente">Hai già un ghiacciaio preferito (%1$s). Vuoi sostituirlo con %2$s?</string>
     <string name="ghiacciaio_preferito_label">Ghiacciaio preferito: %1$s</string>
     <string name="nessun_preferito">nessuno</string>
 
@@ -132,7 +143,7 @@
         Madaccio (in provincia di Bolzano), sulle quali sono presenti degli impianti estivi di risalita dello Stelvio.\n
         Nel tempo questi ghiacciai, come molti altri nelle Alpi, si sono ridotti notevolmente. Ad esempio,
         il ghiacciaio Cristallo, che una volta era uno dei più estesi delle Dolomiti, nel 1957 misurava 35 ettari,
-        ma oggi è notevolmente ridotto e segnato da crepacci.\n
+        but oggi è notevolmente ridotto e segnato da crepacci.\n
         \nCURIOSITA’: Qui, nell’agosto del 1888, perse la vita il celebre alpinista Michele Innerkolfer,
         cadendo in un crepaccio a seguito del crollo di un ponte di neve.\n
     </string>
@@ -176,7 +187,6 @@
         Il continuo movimento del ghiacciaio e la riduzione del suo spessore hanno tuttavia cancellato
         ogni traccia dei circa 10 km di gallerie scavate dai soldati nelle viscere del ghiacciaio,
         denominata in tedesco Eisstadt ("Città di Ghiaccio").\n
-
     </string>
 
     <!-- CIVETTA -->
@@ -256,6 +266,7 @@
         dei cambiamenti climatici, come documentato anche in filmati storici e attuali che mostrano
         la scomparsa del ghiacciaio pensile del Popera di 50 metri.\n
     </string>
+
     <!-- intro,login,registrazione,eventi,menù laterale -->
     <string name="salta">SALTA</string>
     <string name="avanti">AVANTI</string>

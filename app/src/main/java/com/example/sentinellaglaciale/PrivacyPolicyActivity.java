@@ -8,11 +8,9 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.sentinellaglaciale.ui.intro.IntroActivity;
 
-public class PrivacyPolicyActivity extends AppCompatActivity {
+public class PrivacyPolicyActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

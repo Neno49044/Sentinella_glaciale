@@ -1,23 +1,21 @@
 package com.example.sentinellaglaciale.ui.educazione;
 
 
-
+import com.example.sentinellaglaciale.R;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 public class educazioneViewModel extends ViewModel {
 
-    private final MutableLiveData<String> mText;
+    private final MutableLiveData<Integer> mText;
 
     public educazioneViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("Benvenuto in sentinella glaciale! In questa sezione potrai imparare alcune " +
-                "informazioni sui principali ghiacciai dolomitici e metterti alla prova con un " +
-                "divertente quiz!");
+        mText.setValue(R.string.intro_edu);
     }
 
-    public LiveData<String> getText() {
+    public LiveData<Integer> getText() {
         return mText;
     }
 }

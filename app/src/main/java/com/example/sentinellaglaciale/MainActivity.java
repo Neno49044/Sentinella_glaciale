@@ -11,8 +11,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -30,9 +30,8 @@ import com.google.android.material.navigation.NavigationView;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
-    private ActivityMainBinding binding;
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
@@ -44,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.toolbar);
@@ -55,19 +54,25 @@ public class MainActivity extends AppCompatActivity {
         navigationView.setItemIconTintList(null);
         navigationView.setItemTextColor(null);
 
-        drawerLayout.addDrawerListener(new DrawerLayout.SimpleDrawerListener() {
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this,
+                drawerLayout,
+                binding.toolbar,
+                R.string.navigation_drawer_open,
+                R.string.navigation_drawer_close
+        ) {
             @Override
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
                 updateFavoriteGlacierInMenu();
             }
-        });
+        };
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
 
         BottomNavigationView navView = binding.navView;
         navView.setItemIconTintList(null);
 
-        // Rimuoviamo il QuizFragment dalle destinazioni di primo livello
-        // In questo modo, mostrerà la freccia "Indietro" invece del menu
         appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_educazione,
                 R.id.navigation_mappa,
@@ -108,12 +113,41 @@ public class MainActivity extends AppCompatActivity {
                     });
                 });
                 return true;
+            } else if (itemId == R.id.nav_language) {
+                mostraDialogLingua();
+                return true;
             }
             return false;
         });
 
         loadInitialUserData();
     }
+
+    // --- METODI PER LA LINGUA ---
+    private void mostraDialogLingua() {
+        String[] lingue = {getString(R.string.italiano), getString(R.string.inglese)};
+
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.scegli_lingua)
+                .setItems(lingue, (dialog, which) -> {
+                    if (which == 0) {
+                        setLocale("it");
+                    } else {
+                        setLocale("en");
+                    }
+                })
+                .show();
+    }
+
+    private void setLocale(String langCode) {
+        // Salva la scelta
+        getSharedPreferences("Settings", MODE_PRIVATE).edit().putString("My_Lang", langCode).apply();
+
+        // Riavvia l'activity per applicare i cambiamenti
+        recreate();
+    }
+
+    // --- FINE METODI LINGUA ---
 
     private void loadInitialUserData() {
         SharedPreferences prefs = getSharedPreferences("MyAppPrefs", MODE_PRIVATE);
@@ -153,7 +187,9 @@ public class MainActivity extends AppCompatActivity {
     private void updateNavMenu(User user) {
         Menu menu = navigationView.getMenu();
         MenuItem emailItem = menu.findItem(R.id.nav_email);
-        emailItem.setTitle(user.getEmail());
+        if (emailItem != null) {
+            emailItem.setTitle(user.getEmail());
+        }
     }
 
     private void updateFavoriteGlacierInMenu() {

@@ -1,0 +1,328 @@
+<resources>
+    <string name="app_name">Glacial Sentinel</string>
+    <string name="title_educazione">Education</string>
+    <string name="title_mappa">Map</string>
+    <string name="title_eventi">Events</string>
+    <string name="title_quiz">Quiz</string>
+    <string name="navigation_drawer_open">Open navigation menu</string>
+    <string name="navigation_drawer_close">Close navigation menu</string>
+
+
+    <!--Strings for the education section-->
+    <string name="intro_edu">Welcome to the glacial sentinel! In this section, you can
+            learn some information about the main Dolomite glaciers and test
+        yourself with a fun quiz!</string>
+    <string name="intro_quiz">Welcome to the quiz section!</string>
+    <string name="button_quiz">Test yourself!</string>
+    <string name="titolo_edu1">INTRODUCTION</string>
+    <string name="info_generali1">Alpine glaciers are among the largest and most studied glacial complexes
+        in Central Europe, but in recent decades they have been undergoing accelerated retreat
+        due to climate change. This phenomenon is not a simple natural process,
+        but is deeply linked to human action and greenhouse gas emissions.</string>
+    <string name="titolo_edu2">GLOBAL WARMING</string>
+    <string name="info_generali2">The central element behind the melting of glaciers is
+        global warming: the increase in average global temperatures is mainly due
+        to the increase in greenhouse gases (such as carbon dioxide and methane) deriving from
+        human activities, especially the combustion of fossil fuels, industry, and
+        deforestation. In the Alps, this warming is more intense than the global average:
+        the alpine region warms about twice as fast as the global average,
+        making glaciers particularly vulnerable</string>
+    <string name="titolo_edu3">OTHER CAUSES</string>
+    <string name="info_generali3_bullet1">The reduction in snowfall and the increase in
+        precipitation in the form of rain rather than snow decrease the accumulation of glacial mass.
+    </string>
+    <string name="info_generali3_bullet2">Reduced albedo effect: when the glacier surface
+        decreases, the reflection of sunlight (albedo) is reduced, increasing
+        heat absorption and accelerating melting.
+    </string>
+    <string name="info_generali3_bullet3">Presence of dust and soot on ice and snow,
+        which darken the surface favoring heat absorption.
+    </string>
+    <string name="titolo_edu4">CONSEQUENCES</string>
+    <string name="info_generali4">Below is a list of consequences</string>
+    <string name="info_generali4_bullet1">Water resources: alpine glaciers act as
+        natural freshwater reservoirs: they release water gradually during the summer, feeding rivers
+        and water basins. Their retreat reduces this reserve, with impacts on drinking water,
+        agriculture and energy production (hydroelectric). In many mountain areas and low plains,
+        the decrease in summer river flow can lead to more frequent and intense droughts.
+    </string>
+    <string name="info_generali4_bullet2">Natural hazards: the destabilization of the mountain landscape
+        due to the melting of glaciers and permafrost increases the risk of landslides,
+        rockfalls and debris flows. Furthermore, the rapid retreat can lead to the formation
+        of unstable glacial lakes, with a risk of natural dam failure and sudden flooding.
+    </string>
+    <string name="info_generali4_bullet3">Biodiversity and landscape: the loss of ice
+        modifies alpine ecosystems: species adapted to the cold find themselves in difficulty,
+        while others move to higher altitudes. This alters seasonal rhythms,
+        habitats and ecological balances.
+    </string>
+
+    <!--Strings for the quiz part-->
+    <string name="domanda1">1) Which of the following is one of the main causes of glacier melting?</string>
+    <string name="opzione11">Increase in precipitation</string>
+    <string name="opzione12">Increase in the greenhouse effect</string>
+    <string name="opzione13">Reduction of water in water basins</string>
+    <string name="opzione14">Increase in the number of landslides in mountain landscapes</string>
+    <string name="soluzione1">The correct solution is number 2: Increase in the greenhouse effect</string>
+    <string name="domanda2">2) Which of these is NOT a cause of glacier melting?</string>
+    <string name="opzione21">Reduction of the albedo effect</string>
+    <string name="opzione22">Presence of soot on the ice</string>
+    <string name="opzione23">Emission of nuclear waste</string>
+    <string name="opzione24">Reduction in snowfall</string>
+    <string name="soluzione2">The correct solution is number 3: Emission of nuclear waste.</string>
+    <string name="domanda3">3) At what speed does global warming proceed on Alpine glaciers compared to the global average?</string>
+    <string name="opzione31">At the same speed</string>
+    <string name="opzione32">Half speed</string>
+    <string name="opzione33">Triple</string>
+    <string name="opzione34">Double</string>
+    <string name="soluzione3">The correct solution is number 4: Double.</string>
+    <string name="domanda4">4) Which of these is a greenhouse gas harmful to the environment and glaciers?</string>
+    <string name="opzione41">Nitrogen</string>
+    <string name="opzione42">Methane</string>
+    <string name="opzione43">Oxygen</string>
+    <string name="opzione44">Argon</string>
+    <string name="soluzione4">The correct solution is number 2: Methane.</string>
+    <string name="domanda5">5) Which of these is NOT a water-related consequence of glacier melting?</string>
+    <string name="opzione51">Reduction of grazeable land</string>
+    <string name="opzione52">Decrease in hydroelectric energy production</string>
+    <string name="opzione53">More frequent and intense droughts</string>
+    <string name="opzione54">Reduction of water levels in water basins</string>
+    <string name="soluzione5">The correct solution is number 1: Reduction of grazeable land.</string>
+    <string name="domanda6">6) Which of these is NOT a biodiversity-related consequence of glacier melting?</string>
+    <string name="opzione61">Some animal species move towards higher altitudes</string>
+    <string name="opzione62">Some animal species struggle to adapt</string>
+    <string name="opzione63">Seasonal rhythms are altered</string>
+    <string name="opzione64">Habitats become more varied</string>
+    <string name="soluzione6">The correct solution is number 4: Habitats become more varied.</string>
+    <string name="domanda7">7) Which of the following is NOT an activity that causes a large increase in greenhouse gases?</string>
+    <string name="opzione71">Hydroelectric energy production</string>
+    <string name="opzione72">Industry</string>
+    <string name="opzione73">Increase in deforestation</string>
+    <string name="opzione74">Combustion of fossil fuels</string>
+    <string name="soluzione7">The correct solution is number 1: Hydroelectric energy production.</string>
+    <string name="domanda8">8) Which of these is NOT a natural risk-related consequence of glacier melting?</string>
+    <string name="opzione81">Increase in the risk of landslides</string>
+    <string name="opzione82">Reduction of drought periods</string>
+    <string name="opzione83">Failure of natural dams</string>
+    <string name="opzione84">Formation of unstable frozen lakes</string>
+    <string name="soluzione8">The correct solution is number 2: Reduction of drought periods.</string>
+    <string name="button_soluzione">Submit answers</string>
+    <string name="button_finequiz">Go back</string>
+
+
+    <!--Strings for the glaciers part-->
+    <string name="chiudi">Close</string>
+    <string name="vedi_piu">See more</string>
+    <string name="titolo_raggruppamento">Mountain group:</string>
+    <string name="titolo_ghiacciai">Glaciers:</string>
+    <string name="titolo_bacino">River basin:</string>
+    <string name="titolo_descrizione">Description:</string>
+    <string name="info_non_disponibili">Information not available for this glacier.</string>
+    <string name="preferito">Favorite</string>
+    <string name="cambia_preferito">Change favorite glacier</string>
+    <string name="si">Yes</string>
+    <string name="no">No</string>
+    <string name="preferito_gia_presente">You already have a favorite glacier (%1$s). Do you want to change it to %2$s?</string>
+    <string name="ghiacciaio_preferito_label">Favorite glacier: %1$s</string>
+    <string name="nessun_preferito">none</string>
+
+    <!-- CRISTALLO -->
+    <string name="raggruppamento_cristallo">Northeastern Dolomites</string>
+    <string name="ghiacciai_cristallo">Popena, Cristallo, Cresta Bianca</string>
+    <string name="bacino_cristallo">Adige</string>
+    <string name="descrizione_cristallo">Mount Cristallo is located between the Stelvio Pass (north)
+        and Val Zebrù (south) and features two completely opposite slopes:
+        the north slope is covered by the Vedretta dei Vitelli (in the province of Sondrio) and by the Vedretta del
+        Madaccio (in the province of Bolzano), which host the Stelvio summer ski lifts.\n
+        Over time these glaciers, like many others in the Alps, have shrunk significantly. For example,
+        the Cristallo glacier, which was once one of the most extensive in the Dolomites, in 1957 measured 35 hectares,
+        but today it is significantly reduced and marked by crevasses.\n
+        \nCURIOSITY: Here, in August 1888, the famous mountaineer Michele Innerkolfer lost his life,
+        falling into a crevasse following the collapse of a snow bridge.\n
+    </string>
+
+    <!-- PALE DI SAN MARTINO -->
+    <string name="raggruppamento_paledisanmartino">South-central Dolomites</string>
+    <string name="ghiacciai_paledisanmartino">Val dei Cantoni, Valle delle Galline, Val Strutt, Ziroccole, Focobon, Fradusta, Travignolo</string>
+    <string name="bacino_paledisanmartino">Piave</string>
+    <string name="descrizione_paledisanmartino">The main glaciers of this mountain group are
+        the Fradusta glacier and the Travignolo glacier. These are the only survivors of a
+        much larger number of glacial systems surveyed at the beginning of the last century, and both are
+        in strong retreat for many years.\nThe Fradusta glacier, being fed exclusively
+        by direct snowfall (which has become scarcer and scarcer every year) and undergoing increasingly high
+        summer temperatures, has ended up constantly lacking residual snow cover
+        at the end of the season and therefore food, with a consequent rapid retreat.\nIn the past the glacier
+        was considered the most important of the Pale and was the second largest in the Dolomites, in area,
+        after the Marmolada Glacier. The hot summer of 2003 led to the division of the
+        glacier in two parts and from 2018 to the total disappearance of the lower part. The decrease in
+        surface area and the reduction in thickness suggest that in a few years even the
+        small remaining portion of ice will be completely extinguished.\nFollowing the continuous melting,
+        currently the glacier is no longer the largest of the Pale, as it has reached a smaller size
+        compared to the Travignolo Glacier. As for the latter, it is a
+        valley glacier fed by avalanches. Since 1947 the Travignolo Glacier has retreated
+        by about 200 meters in elevation and today the front is near 2300 meters above sea level, with two lobes covered
+        with debris and of reduced thickness.\n
+    </string>
+
+    <!-- MARMOLADA -->
+    <string name="raggruppamento_marmolada">Northwestern Dolomites</string>
+    <string name="ghiacciai_marmolada">Passo la Banca, Ombrettola</string>
+    <string name="bacino_marmolada">Piave</string>
+    <string name="descrizione_marmolada">The Marmolada glacier is a valley glacier that descends
+        along the northern slope of the Marmolada, the highest mountain in the Dolomites. It is located
+        in the province of Trento and from it the Avisio stream takes shape.\nLike all glaciers in the
+        Alps, the Marmolada glacier has also recently retreated a lot. Within a century
+        its dimensions have more than halved: in 2013 it measured 190 hectares, while in 1910 it measured 450 hectares.\n
+        \nCURIOSITY: In 1916, during the Great War, the engineers of the Austro-Hungarian army built
+        inside the Marmolada glacier a complex of tunnels, dormitories and warehouses to connect
+        the different positions at high altitude targeted by the constant fire of the Italian troops perched
+        on the Serauta Ridge (then the state border passed right through the glacier).
+        The continuous movement of the glacier and the reduction of its thickness have however cancelled
+        any trace of the approximately 10 km of tunnels dug by soldiers in the bowels of the glacier,
+        called in German Eisstadt (\"City of Ice\").\n
+
+    </string>
+
+    <!-- CIVETTA -->
+    <string name="raggruppamento_civetta">Zoldo Dolomites</string>
+    <string name="ghiacciai_civetta">Cristallo, Val Zuita, Cantoni, Moiazza, Civetta Est</string>
+    <string name="bacino_civetta">Piave</string>
+    <string name="descrizione_civetta">Mount Civetta, in the Dolomites, does not host large valley
+        glaciers like the Marmolada, but features interesting ice formations and perennial snowfields,
+        especially along the north-east face, where seasonal and perennial icefalls
+        (like the famous Zuita Patavina) and minor hanging glaciers are located, including the Cristallo glacier.
+        Most of the glaciers that were once present within this mountain group
+        have now disappeared due to the increase in summer temperatures and the relatively
+        low altitude at which these glacial formations were located compared to other alpine groups.\n
+    </string>
+
+    <!-- PELMO -->
+    <string name="raggruppamento_pelmo">Zoldo Dolomites</string>
+    <string name="ghiacciai_pelmo"> Val d’Arcia</string>
+    <string name="bacino_pelmo">Piave</string>
+    <string name="descrizione_pelmo">Mount Pelmo in the past hosted small glaciers and glacionevates,
+        today completely disappeared. These small glacial formations were among the first to disappear
+        due to the low altitude, which made them particularly vulnerable to the increase in alpine temperatures
+        and the reduction of snowfall. This makes the glaciers of this mountain group an excellent
+        example of how climate change and global warming are quickly changing
+        the alpine landscape.\n
+        \nCURIOSITY: Despite the glaciers in this area being declared completely melted
+        for a long time, in 2024 traces of an old glacier were found under
+        layers of debris, moved by recent landslides.\n
+    </string>
+
+    <!-- TOFANE -->
+    <string name="raggruppamento_tofane">Northeastern Dolomites</string>
+    <string name="ghiacciai_tofane">Tofana East, Tofana West, Potofana, Fanes</string>
+    <string name="bacino_tofane">Piave</string>
+    <string name="descrizione_tofane">On the Tofane, a Dolomite massif near Cortina, small glaciers
+        were once present, but due to climate warming, they have almost completely
+        disappeared or been reduced to snowy residue. If we talk about \"glaciers\" on the Tofane today,
+        we are referring to glacial residues and snowfields rather than actual expanding glaciers,
+        a common phenomenon throughout the Dolomites.\n
+    </string>
+
+    <!-- ANTELAO-MARMAROLE -->
+    <string name="raggruppamento_antelaomarmarole">Northeastern Dolomites</string>
+    <string name="ghiacciai_antelaomarmarole">Val Salvella, Ciampestrini, Upper Antelao, Lower
+        Antelao, Selle, Froppa di Fuori, Froppa di Dentro, Meduce di Fuori, Meduce di Dentro</string>
+    <string name="bacino_antelaomarmarole">Piave</string>
+    <string name="descrizione_antelaomarmarole">The glaciers of the Antelao (the \"King of the Dolomites\") and
+        the Marmarole are in strong regression, with the Upper and Lower Glacier of the Antelao
+        still present but reduced, accessible through demanding via ferratas and hiking trails.
+        The five historical glaciers of the Marmarole, instead, have already disappeared, testifying to the climate
+        change, with hikers observing rocks polished by ice and glacial lakes in place of
+        the once extensive snow masses, offering spectacular views but in an environment that changes
+        rapidly.\n
+    </string>
+
+    <!-- SORAPIS -->
+    <string name="raggruppamento_sorapis">Northeastern Dolomites</string>
+    <string name="ghiacciai_sorapis">Sorapis East, Sorapis Central, Zurlon, Sorapis West, Foppa di Mattia</string>
+    <string name="bacino_sorapis">Piave</string>
+    <string name="descrizione_sorapis">The Sorapis glaciers are three small but significant glaciers
+        in the Sorapis massif, in the Ampezzo Dolomites, known for feeding the famous Lake Sorapis
+        with their meltwater, giving it its iconic blue/turquoise color due to the
+        dolomite rock \"flour\". These glaciers, despite being among the largest in the Dolomites,
+        are in strong and constant retreat due to climate change, representing a fragile
+        environment and an important signal of global warming.\n
+    </string>
+
+    <!-- CADINI-POPERA -->
+    <string name="raggruppamento_cadinipopera">Northeastern Dolomites</string>
+    <string name="ghiacciai_cadinipopera">San Lucano, Lower Popera, Hanging Popera, Upper Popera</string>
+    <string name="bacino_cadinipopera">Piave</string>
+    <string name="descrizione_cadinipopera">The glaciers of the Cadini and Popera, in the Eastern Dolomites,
+        are in strong regression, especially the Upper Popera Glacier, which today is reduced
+        to a small glacier covered with debris at the base of Cima Undici. Of this glacier
+        only a little surface and mass remains, and it is almost entirely covered by debris, but
+        it still presents weak glacial dynamics and crevasses. This is now a dramatic witness
+        to climate change, as documented also in historical and current films that show
+        the disappearance of the 50-meter Popera hanging glacier.\n
+    </string>
+
+    <!-- intro,login,registration,events,side menu -->
+    <string name="salta">SKIP</string>
+    <string name="avanti">NEXT</string>
+    <string name="sentinella_galaciale">Glacial Sentinel</string>
+    <string name="accedi_per_continuare">Log in to continue</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="non_hai_un_account_registrati">Don\'t have an account? Sign up</string>
+    <string name="torna_indietro">Go back</string>
+    <string name="crea_il_tuo_account">Create your account</string>
+    <string name="unisciti_a_sentinella_galaciale">Join Glacial Sentinel</string>
+    <string name="scegli_la_tua_immagine_profilo">Choose your profile picture</string>
+    <string name="email_reg">Email</string>
+    <string name="nome_utente">Username</string>
+    <string name="password_reg">Password</string>
+    <string name="registrati">Sign up</string>
+    <string name="mario_rossi">John Doe</string>
+    <string name="maggiori_informazioni">More information</string>
+    <string name="giornata_mondiale_dei_ghiacciai">World Glacier Day</string>
+    <string name="_21_marzo_2026">March 21, 2026</string>
+    <string name="eventi_organizzati_su_tutto_il_territorio_italiano">Events organized throughout Italy</string>
+    <string name="proteggere_i_ghiacciai_una_responsabilit_di_tutti_agisci_ora">Protecting glaciers is everyone\'s responsibility. Act now!</string>
+    <string name="_26_27_febbraio_2026">February 26-27, 2026</string>
+    <string name="milano_italia">Milan, Italy</string>
+    <string name="un_incontro_internazionale_per_comprendere_le_profonde_trasformazioni_dei_ghiacciai_alpini_e_dei_territori_di_alta_montagna">An international meeting to understand the profound transformations of alpine glaciers and high mountain territories.</string>
+    <string name="_29_alpine_glaciological_meeting_agm2026">29th Alpine Glaciological Meeting (AGM2026)</string>
+    <string name="descrizione_evento">Event Description:</string>
+    <string name="in_occasione_della_giornata_mondiale_dei_ghiacciai_sul_territorio_italiano_saranno_organizzate_numerose_attivit_tra_cui_laboratori_educativi_conferenze_e_soprattutto_passeggiate_sul_territorio_e_sui_ghiacciai_alpini">On the occasion of World Glacier Day, numerous activities will be organized in Italy, including educational workshops, conferences and above all walks on the territory and on alpine glaciers.</string>
+    <string name="le_iniziative_saranno_promosse_da_diversi_enti_in_particolare_dal_club_alpino_italiano_cai_da_sempre_fortemente_presente_e_attivo_sul_territorio">The initiatives will be promoted by various entities, in particular by the Italian Alpine Club (CAI), which has always been strongly present and active in the territory.</string>
+    <string name="per_rimanere_aggiornati_sulle_attivit_in_programma_possibile_consultare_la_pagina_dedicata_al_seguente_link">To stay updated on the activities in the program, it is possible to consult the dedicated page at the following link.</string>
+    <string name="il_29_incontro_di_glaciologia_alpina_in_programma_il_26_e_27_febbraio_2026_riunisce_la_comunit_glaciologica_alpina_per_promuovere_uno_scambio_scientifico_aperto_e_inclusivo">The 29th Alpine Glaciology Meeting, scheduled for February 26 and 27, 2026, brings together the alpine glaciological community to promote an open and inclusive scientific exchange.</string>
+    <string name="l_incontro_si_concentra_sulle_rapide_trasformazioni_della_criosfera_alpina_e_sulle_loro_implicazioni_scientifiche_e_sociali_affrontando_temi_come_il_ritiro_dei_ghiacciai_i_rischi_glaciologici_emergenti_i_cambiamenti_idrologici_e_l_impatto_delle_attivit_umane_sugli_ambienti_montani">The meeting focuses on the rapid transformations of the alpine cryosphere and their scientific and social implications, addressing themes such as glacier retreat, emerging glaciological risks, hydrological changes and the impact of human activities on mountain environments.</string>
+    <string name="particolare_attenzione_dedicata_agli_approcci_interdisciplinari_e_al_coinvolgimento_dei_giovani_ricercatori_con_contributi_orali_e_poster">Particular attention is dedicated to interdisciplinary approaches and the involvement of young researchers, with oral and poster contributions.</string>
+    <string name="descrizione_evento2">Event Description:</string>
+    <string name="apri_link">Open link</string>
+    <string name="chiudi2">Close</string>
+    <string name="benvenuto_in_sentinella_glaciale">Welcome to Glacial Sentinel!</string>
+    <string name="esplora_i_ghiacciai_sulla_mappa">Explore the glaciers on the map</string>
+    <string name="impara_cosa_sta_succedendo_ai_ghiacciai">Learn what is happening to the glaciers</string>
+    <string name="mettiti_alla_prova">Test yourself!</string>
+    <string name="partecipa_e_fai_la_differenza">Participate and make a difference</string>
+    <string name="un_app_per_osservare_comprendere_e_proteggere_i_ghiacciai_delle_nostre_montagne">An app to observe, understand and protect the glaciers of our mountains</string>
+    <string name="tocca_un_pin_per_scoprire_lo_stato_di_un_ghiacciaio_la_sua_evoluzione_nel_tempo_e_le_informazioni_principali">Touch a pin to discover the state of a glacier, its evolution over time and the main information</string>
+    <string name="scopri_le_cause_dello_scioglimento_le_conseguenze_sul_territorio_e_perch_il_cambiamento_climatico_ci_riguarda_tutti">Discover the causes of melting, the consequences on the territory and why climate change concerns us all</string>
+    <string name="fine">FINISH</string>
+    <string name="avanti2">NEXT</string>
+    <string name="scopri_eventi_incontri_e_iniziative_per_contribuire_attivamente_alla_salvaguardia_dei_ghiacciai">Discover events, meetings and initiatives to actively contribute to the safeguarding of glaciers</string>
+    <string name="quiz_semplici_e_interattivi_per_imparare_divertendosi_pensati_anche_per_i_pi_piccoli">Simple and interactive quizzes to learn while having fun, designed also for the little ones</string>
+    <string name="inserisci_email_e_password">Enter email and password</string>
+    <string name="email_o_password_errate">Incorrect email or password</string>
+    <string name="ghiacciaio_preferito">"Favorite glacier: "</string>
+    <string name="nessun_ghiacciaio_selezionato">No glacier selected</string>
+    <string name="scegli_la_tua_immagine_profilo2">Choose your profile picture</string>
+    <string name="scegli_un_immagine_profilo">Choose a profile picture</string>
+    <string name="registrazione_completata">Registration completed</string>
+    <string name="email_gi_registrata">Email already registered</string>
+    <string name="compila_tutti_i_campi">Fill in all fields</string>
+
+    <string name="cambia_lingua">Change Language</string>
+    <string name="scegli_lingua">Choose your preferred language:</string>
+    <string name="italiano">Italian</string>
+    <string name="inglese">English</string>
+
+</resources>

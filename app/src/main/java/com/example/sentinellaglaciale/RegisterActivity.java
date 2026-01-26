@@ -9,20 +9,15 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 
-
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.sentinellaglaciale.database.UserDao;
 
-public class RegisterActivity extends AppCompatActivity {
+public class RegisterActivity extends BaseActivity {
 
     EditText etEmail, etUsername, etPassword;
     ImageView imgProfile;
     LinearLayout layoutProfilePicker;
     Button btnRegister;
     ImageView btnBack;
-
-
 
     private final int[] avatars = {
             R.drawable.ic_sentinella,
@@ -136,6 +131,4 @@ public class RegisterActivity extends AppCompatActivity {
             Toast.makeText(this, R.string.email_gi_registrata, Toast.LENGTH_SHORT).show();
         }
     }
-
 }
-

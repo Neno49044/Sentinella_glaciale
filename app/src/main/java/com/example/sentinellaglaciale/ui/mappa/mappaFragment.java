@@ -12,7 +12,6 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.sentinellaglaciale.databinding.FragmentMappaBinding;
 
-//Classi della libreria OSMDroid
 import org.osmdroid.config.Configuration;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
@@ -44,9 +43,8 @@ public class mappaFragment extends Fragment {
         Configuration.getInstance().setUserAgentValue(requireContext().getPackageName());
 
         map = binding.map;
-        //map.setMultiTouchControls(true);
         map.setBuiltInZoomControls(true);// mostra i bottoni + e -
-        map.setMultiTouchControls(true);// permette pinch zoom
+        map.setMultiTouchControls(true);// permette pinch zoom?
 
         map.setOnTouchListener((v, event) -> {
             if (event.getAction() == android.view.MotionEvent.ACTION_DOWN) {
@@ -74,35 +72,21 @@ public class mappaFragment extends Fragment {
                 Marker ghiacciaioMarker = new Marker(map);
                 ghiacciaioMarker.setPosition(geoPoint);
 
-                // 1. CARICAMENTO E SCALATURA ICONA
+                //CARICAMENTO E SCALATURA ICONA
                 Drawable icon = ContextCompat.getDrawable(requireContext(), R.drawable.pin_ghiacciaio);
                 if (icon != null) {
                     Bitmap bitmap = ((BitmapDrawable) icon).getBitmap();
-                    // Scaliamo a 45dp (una dimensione standard leggibile per i marker)
                     int size = (int) (16 * getResources().getDisplayMetrics().density);
                     Bitmap scaledBitmap = Bitmap.createScaledBitmap(bitmap, size, size, true);
                     ghiacciaioMarker.setIcon(new BitmapDrawable(getResources(), scaledBitmap));
                 }
 
-                // 2. ANCORAGGIO (il punto del pin tocca le coordinate)
+                //ANCORAGGIO
                 ghiacciaioMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
 
-                // 3. IMPOSTAZIONI NECESSARIE (Titolo, Oggetto e InfoWindow)
                 ghiacciaioMarker.setTitle(ghiacciaio.getNome());
                 ghiacciaioMarker.setRelatedObject(ghiacciaio);
                 ghiacciaioMarker.setInfoWindow(infoWindow);
-
-                /*// Listener per aprire dettagli
-                ghiacciaioMarker.setOnMarkerClickListener((marker, mapView) -> {
-                    Bundle args = new Bundle();
-                    args.putSerializable("ghiacciaio", ghiacciaio);
-
-                    //Per chiudere bene scheda ghiacciaio anche senza x
-                    androidx.navigation.Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_activity_main)
-                            .navigate(R.id.navigation_dettagli, args);
-
-                    return true;
-                });*/
 
                 map.getOverlays().add(ghiacciaioMarker);
             }
