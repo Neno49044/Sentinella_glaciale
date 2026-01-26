@@ -30,7 +30,7 @@ public class GhiacciaioRepository {
     public void setGhiacciai(Context context, List<Ghiacciaio> lista) {
         ghiacciai.clear();
         ghiacciai.addAll(lista);
-        loadPreferito(context); // Carica il preferito dopo aver impostato la lista
+        loadPreferito(context);
     }
 
     public Ghiacciaio getPreferito() {
@@ -65,8 +65,6 @@ public class GhiacciaioRepository {
         SharedPreferences prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
         editor.putString(PREF_FAVORITE_GLACIER, nomeGhiacciaio);
-        // Usa commit() per un salvataggio immediato e sincrono.
-        // Questo risolve il race condition.
         editor.commit();
     }
 
