@@ -132,6 +132,7 @@
     <string name="preferito_gia_presente">Hai già un ghiacciaio preferito (%1$s). Vuoi sostituirlo con %2$s?</string>
     <string name="ghiacciaio_preferito_label">Ghiacciaio preferito: %1$s</string>
     <string name="nessun_preferito">nessuno</string>
+    <string name="title_dettagli_ghiacciaio">Dettagli Ghiacciaio</string>
 
     <!-- CRISTALLO -->
     <string name="raggruppamento_cristallo">Dolomiti Nord Orientali</string>

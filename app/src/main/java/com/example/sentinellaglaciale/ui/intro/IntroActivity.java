@@ -5,10 +5,10 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.example.sentinellaglaciale.BaseActivity;
 import com.example.sentinellaglaciale.LoginActivity;
 import com.example.sentinellaglaciale.R;
 import com.google.android.material.tabs.TabLayout;
@@ -17,7 +17,7 @@ import com.google.android.material.tabs.TabLayoutMediator;
 import java.util.ArrayList;
 import java.util.List;
 
-public class IntroActivity extends AppCompatActivity {
+public class IntroActivity extends BaseActivity {
 
     private ViewPager2 viewPager;
     private IntroAdapter adapter;
@@ -33,7 +33,7 @@ public class IntroActivity extends AppCompatActivity {
         if (prefs.getBoolean("intro_seen", false)) {
             startActivity(new Intent(this, LoginActivity.class));
             finish();
-            return; // Skip the rest of the method
+            return;
         }
 
         setContentView(R.layout.activity_intro);

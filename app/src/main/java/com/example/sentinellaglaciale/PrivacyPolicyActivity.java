@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
+
 import com.example.sentinellaglaciale.ui.intro.IntroActivity;
 
 public class PrivacyPolicyActivity extends BaseActivity {
@@ -16,6 +18,14 @@ public class PrivacyPolicyActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        // 1. SCELTA LINGUA (Solo al primissimo avvio)
+        SharedPreferences settings = getSharedPreferences("Settings", MODE_PRIVATE);
+        if (!settings.getBoolean("lang_selected", false)) {
+            showInitialLanguageDialog();
+            return;
+        }
+
+        // 2. CONTROLLO PRIVACY
         SharedPreferences prefs = getSharedPreferences("MyAppPrefs", MODE_PRIVATE);
         if (prefs.getBoolean("privacy_accepted", false)) {
             startActivity(new Intent(this, IntroActivity.class));
@@ -23,6 +33,7 @@ public class PrivacyPolicyActivity extends BaseActivity {
             return;
         }
 
+        // 3. MOSTRA PRIVACY POLICY
         setContentView(R.layout.activity_privacy_policy);
 
         CheckBox checkboxAccept = findViewById(R.id.checkbox_accept);
@@ -49,5 +60,26 @@ public class PrivacyPolicyActivity extends BaseActivity {
         buttonDecline.setOnClickListener(v -> {
             finishAffinity();
         });
+    }
+
+    private void showInitialLanguageDialog() {
+        String[] languages = {"Italiano", "English"};
+        
+        new AlertDialog.Builder(this)
+                .setTitle("Scegli la lingua / Choose language")
+                .setCancelable(false)
+                .setItems(languages, (dialog, which) -> {
+                    String langCode = (which == 0) ? "it" : "en";
+                    
+                    // Salva la scelta in "Settings" (usato da BaseActivity)
+                    getSharedPreferences("Settings", MODE_PRIVATE).edit()
+                            .putString("My_Lang", langCode)
+                            .putBoolean("lang_selected", true)
+                            .apply();
+                    
+                    // Ricarica l'activity per applicare la lingua
+                    recreate();
+                })
+                .show();
     }
 }

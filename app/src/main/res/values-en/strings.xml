@@ -125,6 +125,7 @@
     <string name="preferito_gia_presente">You already have a favorite glacier (%1$s). Do you want to change it to %2$s?</string>
     <string name="ghiacciaio_preferito_label">Favorite glacier: %1$s</string>
     <string name="nessun_preferito">none</string>
+    <string name="title_dettagli_ghiacciaio">Glacier Details</string>
 
     <!-- CRISTALLO -->
     <string name="raggruppamento_cristallo">Northeastern Dolomites</string>
@@ -319,6 +320,12 @@
     <string name="registrazione_completata">Registration completed</string>
     <string name="email_gi_registrata">Email already registered</string>
     <string name="compila_tutti_i_campi">Fill in all fields</string>
+
+    <string name="informativa_sulla_privacy">Privacy Policy</string>
+    <string name="ho_letto_e_accetto_l_informativa_sulla_privacy">I have read and accept the privacy policy</string>
+    <string name="accetta_e_continua">Accept and continue</string>
+    <string name="rifiuta_e_esci">Refuse and leave</string>
+    <string name="per_utilizzare_sentinella_glaciale_necessario_creare_un_account_n_ni_dati_che_raccogliamo_n_8226_indirizzo_email_e_username_per_identificarti_e_permetterti_di_accedere_n_8226_ghiacciaio_preferito_per_personalizzare_la_tua_esperienza_nell_app_n_nquesti_dati_vengono_salvati_in_modo_sicuro_sul_dispositivo_e_non_vengono_condivisi_con_terze_parti_n_ncontinuando_accetti_la_nostra_gestione_dei_dati_come_descritto_per_maggiori_dettagli_puoi_consultare_il_regolamento_completo_del_gdpr">To use Glacial Sentinel, you need to create an account.\n\nThe data we collect:\n• Email address and username: to identify you and allow you to log in.\n• Favorite glacier: to personalize your app experience.\n\nThis data is stored securely on your device and is not shared with third parties.\n\nBy continuing, you agree to our data management as described. For more details, you can consult the full GDPR regulation.</string>
 
     <string name="cambia_lingua">Change Language</string>
     <string name="scegli_lingua">Choose your preferred language:</string>
